@@ -3,6 +3,6 @@
 
 
 <%
-	response.sendRedirect("/keep/memo?cmd=login");
+	response.sendRedirect("/keep/person?cmd=login");
 %>
     

@@ -1,4 +1,4 @@
-package com.cos.keep.controller.memo;
+package com.cos.keep.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
-import com.cos.keep.action.MemoLoginAction;
 
 
 @WebServlet("/memo")
@@ -30,7 +29,7 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 	
 			private Action router(String cmd) {
 				if(cmd.equals("login")) {
-					return new MemoLoginAction();
+					return null;
 				}
 				
 				return null;

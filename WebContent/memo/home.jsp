@@ -20,7 +20,7 @@
 <style>
         .navbar
         {
-            border-bottom: 2px solid #5F6368;
+            border-bottom: 1px solid #5F6368;
             
         }
         
@@ -33,6 +33,11 @@
 			background-color: #202124;
 		}
     	
+    	.navbar-nav > li{
+	 	   padding-left:5px;
+ 	 	   padding-right:5px;
+		}
+    	
 </style>
 
 <body>
@@ -43,44 +48,53 @@
 		<a class="navbar-brand" href="#">Keep</a>
 
 		<!-- Toggler/collapsibe Button -->
+		
+		
+		<form class="form-inline" action="">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search">
+			<button class="btn btn-success" type="submit">Search</button>
+		</form>
+		
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link " href="#">Link</a></li>
+				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="#">Link</a></li>
+				
+			</ul>
+			
+			
+		</div>
+			<a class="navbar-brand" href="#">
+			 <img src=""
+			 style ="border-radius:15px"
+			 onerror="this.src='/keep/static/image/userProfile.png'"
+			 src="${sessionScope.principal.userProfile}" width = "30px" height="30px" />
+		</a>	
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<form class="form-inline" action="/action_page.php">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search">
-			<button class="btn btn-success" type="submit">Search</button>
-		</form>
-
-		<!-- Navbar links -->
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-			</ul>
-		</div>
-
-		<a class="navbar-brand" href="#"> <img src="bird.jpg" alt="Logo"
-			style="width: 40px;">
-		</a>	
 	</nav>
 	
 	<br/>
 	<br/>
 	<br/>
 	
+	
+	
 	<!-- 메모하기 -->	
-<form action="">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="제목" id="memo">
-    <input type="text" class="form-control" placeholder="내용" id="memo">
+<div class="container">
+  <h2>Cards with Contextual Classes</h2>
+  <div class="card">
+    <div class="card-body">Basic card</div>
   </div>
-  <div class="form-group">  
-    <input type="text" class="form-control" placeholder="메모 내용" id="memo2">
+  <br>
+  <div class="card bg-primary text-white">
+    <div class="card-body">Primary card</div>
   </div>
-</form>		
-
+  <br>
+</div>
 
 
 
