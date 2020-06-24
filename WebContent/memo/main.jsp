@@ -72,7 +72,7 @@
 			 <img src=""
 			 style ="border-radius:15px"
 			 onerror="this.src='/keep/static/image/userProfile.png'"
-			 src="${sessionScope.principal.userProfile}" width = "30px" height="30px" />
+			 src="" width = "30px" height="30px" />
 		</a>	
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">

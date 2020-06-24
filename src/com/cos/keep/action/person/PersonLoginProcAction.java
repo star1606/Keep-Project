@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.sound.midi.Soundbank;
 
 import com.cos.keep.action.Action;
 import com.cos.keep.model.Person;
@@ -15,51 +17,39 @@ public class PersonLoginProcAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
-		
+	
 		// 1. 유효성 검사
-		if
-		(
-				request.getParameter("email").equals("")||
-				request.getParameter("email") == null ||
-				request.getParameter("personName").equals("")||
-				request.getParameter("personName") == null ||
-				request.getParameter("password").equals("")||
-				request.getParameter("password") == null
-		)
-		{	
+		if(request.getParameter("email").equals("") || request.getParameter("email") == null
+			|| request.getParameter("password").equals("") || request.getParameter("password") == null			
+		) {
 			return;			
 		}
 		
-		
-		
-		
-	
-		// 2. 파마리터 받기 (폼태그 데이터 -> x-www-form-urlenfcoded라는 MIME 타입 key=value)
-		// 3. 클라이언트가 쓴 내용들을 get으로 받아오는 것.
-		
+		// 2. 파라미터 받기
 		String email = request.getParameter("email");
-		String personName = request.getParameter("personName");
 		String password = request.getParameter("password");
-	
 		
-		Person person = Person.builder()
-				.email(email)
-				.personName(personName)
-				.password(password)
-				.build();
+		// 3. 로그인 폼으로 DB연결후 찾아서 맞으면 select하는 함수 호출
+		PersonRepository personRepository = PersonRepository.getInstance();
+		Person person = personRepository.findByEmailandPassword(email, password);
 		
-		//4. DB연결 -UsersRepository save()호출
-		// 그거를 DB에다가 집어넣는 insert작업을 수행하겠네.
-		PersonRepository personRepository = 
-				PersonRepository.getInstance();
+		// 4. 세션연결, principal 인증 데이터 속성 set
+		// 이미 만들어져있는 세션에 접근.
+		// 세션이 만들어지는타이밍은 처음서버떴을때다
+
 		
-		int result = personRepository.save(person);
+		if(person != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("principal", person);
+			// jsession아이디로 principal 자기꺼 확인
+		
+			System.out.println("로그인 성공");
+			response.sendRedirect("/keep/memo/main.jsp");
+		
+		} 
 		
 		
 		//5. index.jsp 페이지로 이동
-		if(result == 1) {
-			response.sendRedirect("/keep/person?cmd=login");
-		}
 		
 		
 	}

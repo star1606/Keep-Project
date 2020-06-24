@@ -48,7 +48,7 @@
 					</div>
 
 					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
@@ -61,7 +61,7 @@
 
 					<div class="text-center p-t-45 p-b-4">
 						<span class="txt1">
-							Forgot
+							아이디 기억하기
 						</span>
 
 						<a href="#" class="txt2 hov1">

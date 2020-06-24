@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 public class Person {
 
 	private int id;
+	private String email;
 	private String personName;
 	private String password;
-	private String email;
 	private Timestamp createDate;
 	
 }

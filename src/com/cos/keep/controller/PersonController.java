@@ -18,7 +18,7 @@ import com.cos.keep.action.person.PersonLoginProcAction;
 @WebServlet("/person")
 public class PersonController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private final static String TAG = "PersonController: ";   
     
 	
 protected void doProcesss(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,6 +26,7 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("text/html; charset=utf-8");
 			String cmd = request.getParameter("cmd");
+			System.out.println(TAG + "doProcess: " + cmd);
 			Action action = router(cmd);
 			action.execute(request, response);
 			
