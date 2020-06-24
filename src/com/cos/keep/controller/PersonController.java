@@ -2,7 +2,6 @@ package com.cos.keep.controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
+import com.cos.keep.action.person.PersonJoinAction;
+import com.cos.keep.action.person.PersonJoinProcAction;
 import com.cos.keep.action.person.PersonLoginAction;
+import com.cos.keep.action.person.PersonLoginProcAction;
 
 
 @WebServlet("/person")
@@ -32,6 +34,12 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 			private Action router(String cmd) {
 				if(cmd.equals("login")) {
 					return new PersonLoginAction();
+				} else if(cmd.equals("join")) {
+					return new PersonJoinAction();	
+				} else if(cmd.equals("joinProc")) {
+					return new PersonJoinProcAction();	
+				} else if(cmd.equals("loginProc")) {
+					return new PersonLoginProcAction();	
 				}
 				
 				return null;

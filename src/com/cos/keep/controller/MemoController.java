@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
+import com.cos.keep.action.person.PersonJoinAction;
+import com.cos.keep.action.person.PersonJoinProcAction;
+import com.cos.keep.action.person.PersonLoginAction;
 
 
 @WebServlet("/memo")
@@ -29,8 +32,8 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 	
 			private Action router(String cmd) {
 				if(cmd.equals("login")) {
-					return null;
-				}
+					//
+				} 
 				
 				return null;
 			}

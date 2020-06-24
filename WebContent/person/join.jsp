@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -36,7 +37,7 @@
 
 .wrap-input100, .input100 {
 
-  height: 55px;
+	height: 50px;
 }
 
 
@@ -50,7 +51,8 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form action="" class="login100-form validate-form" method="POST">
+				<form action="/keep/person?cmd=joinProc" class="login100-form validate-form" method="POST"
+					oninput='passConfirm.setCustomValidity(passConfirm.value != password.value ? "Passwords do not match." : "")'>
 					<span class="login100-form-title p-b-33">
 						Account Join
 					</span>
@@ -60,25 +62,27 @@
 						<input class="input100" type="text" name="email" placeholder="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
-					</div><br>
-					Password:
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
 					</div><br/>
-					Password: 확인
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br/>
+					
 					Name:
 					<div class="wrap-input100 validate-input" data-validate = "Valid name is required">
 						<input class="input100" type="text" name="personName" placeholder="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
-					</div>
+					</div><br/>
+					
+					Password:
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password" placeholder="">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div><br/>
+					Password: 확인
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="passConfirm" placeholder="">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div><br/>
 					
 
 					<div class="container-login100-form-btn m-t-40">

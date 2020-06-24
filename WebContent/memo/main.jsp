@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +56,9 @@
 			<button class="btn btn-success" type="submit">Search</button>
 		</form>
 		
+		
+		
+		
 		<!-- Navbar links -->
 		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 			<ul class="navbar-nav">
@@ -62,8 +66,7 @@
 				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="#">Link</a></li>
 				
 			</ul>
-			
-			
+							
 		</div>
 			<a class="navbar-brand" href="#">
 			 <img src=""
@@ -85,21 +88,29 @@
 	
 	<!-- 메모하기 -->	
 <div class="container">
-  <h2>Cards with Contextual Classes</h2>
-  <div class="card">
-    <div class="card-body">Basic card</div>
-  </div>
-  <br>
-  <div class="card bg-primary text-white">
-    <div class="card-body">Primary card</div>
-  </div>
-  <br>
+  <h2>Form control: textarea</h2>
+  <p>The form below contains a textarea for comments:</p>
+  <form action="">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
 
-
-
-
-
+	<!-- 메모 한 내용들을 뿌리기 -->
+<div class="container">
+  <h2>Form control: textarea</h2>
+  <p>The form below contains a textarea for comments:</p>
+  <form action="">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
 
 
