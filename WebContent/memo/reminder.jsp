@@ -46,7 +46,7 @@
 	<nav class="navbar navbar-expand-md bg-custom navbar-dark ">
 		<!-- Brand -->
 		
-		<a class="navbar-brand" href="#">Keep</a>
+		<a class="navbar-brand" href="#">Reminder</a>
 
 		<!-- Toggler/collapsibe Button -->
 		
@@ -59,8 +59,8 @@
 		<!-- Navbar links -->
 		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link " href="#">Link</a></li>
-				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link " href="/keep/memo/main.jsp">메모</a></li>
+				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li>
 				
 			</ul>
 			

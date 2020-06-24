@@ -62,8 +62,8 @@
 		<!-- Navbar links -->
 		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link " href="#">Link</a></li>
-				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="#">Link</a></li>
+				<li class="nav-item"><a class="nav-link " href="/keep/memo/main.jsp">메모</a></li>
+				<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li>
 				
 			</ul>
 							
@@ -90,7 +90,7 @@
 <div class="container">
   <h2>Form control: textarea</h2>
   <p>The form below contains a textarea for comments:</p>
-  <form action="">
+  <form action="/keep/memo?cmd=wirteProc">
     <div class="form-group">
       <label for="comment">Comment:</label>
       <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
@@ -120,6 +120,28 @@
 
 </body>
 
+<script>
+	
+<%--	
+	$.ajax({
+		data: ""
+		url: ""
+		contentType : ""
+		
+		
+	}).done(function() {
+		
+	}).fail(function() {
+		
+	})
+	
+--%>
+
+
+
+
+
+</script>
 
 
 

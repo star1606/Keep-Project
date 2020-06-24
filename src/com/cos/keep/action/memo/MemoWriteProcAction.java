@@ -1,4 +1,4 @@
-package com.cos.keep.action.person;
+package com.cos.keep.action.memo;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import com.cos.keep.action.Action;
 import com.cos.keep.model.Person;
 import com.cos.keep.repository.PersonRepository;
 
-public class PersonLoginProcAction implements Action{
+public class MemoWriteProcAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
