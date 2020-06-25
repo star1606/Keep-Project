@@ -18,7 +18,6 @@ public class Memo {
 	private int personId;
 	private String title;
 	private String content;	
-	private int priority;		
-	private String userProfile;
+	private int priority;			
 	private Timestamp createDate;
 }

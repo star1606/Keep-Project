@@ -1,6 +1,7 @@
 package com.cos.keep.repository;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -33,7 +34,7 @@ public class PersonRepository {
 		// 객체로 만들어서 한다.
 		public Person findByEmailandPassword(String email, String password) {
 			
-			final String SQL = "SELECT id, email, personName, password, createDate FROM person "
+			final String SQL = "SELECT id, email, personName, password, userProfile, createDate FROM person "
 					+ "WHERE email = ? AND password = ?";
 			Person person = null;
 			
@@ -52,6 +53,7 @@ public class PersonRepository {
 					person.setEmail(rs.getString("email"));
 					person.setPersonName(rs.getString("personName"));
 					person.setPassword(rs.getString("password"));
+					person.setUserProfile(rs.getString("userProfile"));
 					person.setCreateDate(rs.getTimestamp("createDate"));
 					
 				}
@@ -90,7 +92,7 @@ public class PersonRepository {
 				pstmt.setString(1, person.getEmail());
 				pstmt.setString(2, person.getPersonName());
 				pstmt.setString(3, person.getPassword());
-				
+			
 				return pstmt.executeUpdate();
 				
 				

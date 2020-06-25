@@ -18,6 +18,7 @@ public class Person {
 	private String email;
 	private String personName;
 	private String password;
+	private String userProfile;
 	private Timestamp createDate;
 	
 }
