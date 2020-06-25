@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.keep.action.Action;
 import com.cos.keep.model.Person;
 import com.cos.keep.repository.PersonRepository;
+import com.cos.keep.util.Script;
 
 public class PersonJoinProcAction implements Action{
 	
@@ -58,7 +59,12 @@ public class PersonJoinProcAction implements Action{
 		
 		//5. index.jsp 페이지로 이동
 		if(result == 1) {
-			response.sendRedirect("/keep/person?cmd=login");
+		
+			Script.href("회원가입에 성공하였습니다.", "/keep/person?cmd=login", response);
+			
+			
+		} else {
+			Script.back("회원가입에 실패하였습니다", response);
 		}
 		
 		

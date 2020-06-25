@@ -1,6 +1,7 @@
 package com.cos.keep.action.person;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cos.keep.action.Action;
+import com.cos.keep.model.Memo;
 import com.cos.keep.model.Person;
+import com.cos.keep.repository.MemoRepository;
 import com.cos.keep.repository.PersonRepository;
+import com.cos.keep.util.Script;
+import com.google.gson.Gson;
 
 public class PersonLoginProcAction implements Action{
 	
@@ -27,10 +32,13 @@ public class PersonLoginProcAction implements Action{
 		// 2. 파라미터 받기
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
+		System.out.println(email);
+		System.out.println(password);
 		// 3. 로그인 폼으로 DB연결후 찾아서 맞으면 select하는 함수 호출
 		PersonRepository personRepository = PersonRepository.getInstance();
 		Person person = personRepository.findByEmailandPassword(email, password);
+		
+		
 		
 		// 4. 세션연결, principal 인증 데이터 속성 set
 		// 이미 만들어져있는 세션에 접근.
@@ -41,14 +49,25 @@ public class PersonLoginProcAction implements Action{
 			HttpSession session = request.getSession();
 			session.setAttribute("principal", person);
 			// jsession아이디로 principal 자기꺼 확인
+				
+						
 		
-			System.out.println("로그인 성공");
-			response.sendRedirect("/keep/memo/main.jsp");
+			
+
+			
+			
+			
+			
+			Script.href("로그인 성공", "/keep/memo/main.jsp", response);
+			
 		
-		} 
+		} else {
+			
+			Script.back("로그인 실패", response);
+		}
 		
 		
-		//5. index.jsp 페이지로 이동
+	
 		
 		
 	}

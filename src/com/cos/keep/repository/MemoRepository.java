@@ -42,7 +42,7 @@ public class MemoRepository {
 				pstmt = conn.prepareStatement(SQL); // 버퍼 달기
 				
 				//물음표 채우기
-				pstmt.setInt(1, memo.getPersonId());
+				pstmt.setInt(1, memo.getId());
 				pstmt.setString(2, memo.getTitle());
 				pstmt.setString(3, memo.getContent());
 				pstmt.setInt(4, memo.getPriority());

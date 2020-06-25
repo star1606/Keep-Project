@@ -44,7 +44,7 @@ public class Script {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
-			out.print("<h1>" + msg + "</h1>");
+			out.println("<h1>" + msg + "</h1>");
 					
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -59,10 +59,10 @@ public class Script {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
-			out.print("<script>");
-			out.print("alert('"+ msg +"')");  // alert('msg');
-			out.print("history.back();");	//redirect 안쓰고 history back쓴다
-			out.print("</script>");
+			out.println("<script>");
+			out.println("alert('"+ msg +"')");  // alert('msg');
+			out.println("history.back();");	//redirect 안쓰고 history back쓴다
+			out.println("</script>");
 					
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,10 +77,11 @@ public class Script {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
-			out.print("<script>");
-			out.print("alert('"+ msg +"')");  // alert('msg');
-			out.print("location.href='" + uri + "';");	
-			out.print("</script>");
+			out.println("<script>");
+			out.println("alert('"+ msg +"')");  // alert('msg');
+			out.println("location.href='" + uri + "';");	
+			
+			out.println("</script>");
 					
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,10 +97,10 @@ public class Script {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			
-			out.print("<script>");
+			out.println("<script>");
 			
-			out.print("location.href='" + uri + "';");	
-			out.print("</script>");
+			out.println("location.href='" + uri + "';");	
+			out.println("</script>");
 					
 		} catch (Exception e) {
 			e.printStackTrace();

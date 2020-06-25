@@ -34,8 +34,7 @@ public class PersonRepository {
 		// 객체로 만들어서 한다.
 		public Person findByEmailandPassword(String email, String password) {
 			
-			final String SQL = "SELECT id, email, personName, password, userProfile, createDate FROM person "
-					+ "WHERE email = ? AND password = ?";
+			final String SQL = "SELECT id, email, personName, password, userProfile, createDate FROM person	WHERE email = ? AND password = ?";
 			Person person = null;
 			
 			try {
@@ -46,7 +45,7 @@ public class PersonRepository {
 				pstmt.setString(2, password);
 				
 				rs = pstmt.executeQuery();
-				
+				System.out.println(rs);
 				if (rs.next()) {
 					person = new Person();
 					person.setId(rs.getInt("id"));
@@ -57,7 +56,7 @@ public class PersonRepository {
 					person.setCreateDate(rs.getTimestamp("createDate"));
 					
 				}
-				
+			
 				return person;
 				
 				

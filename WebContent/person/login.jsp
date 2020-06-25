@@ -53,9 +53,10 @@
 						<span class="focus-input100-2"></span>
 					</div>
 
+					<!-- 로그인 -->
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn">
-							Sign in
+							로그인
 						</button>
 					</div>
 
@@ -69,6 +70,7 @@
 						</a>
 					</div>
 
+					<!-- 회원가입  -->
 					<div class="text-center">
 						<span class="txt1">
 							Create an account?
