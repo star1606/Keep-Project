@@ -51,7 +51,7 @@ public class MemoWriteProcAction implements Action{
 	
 	
 		if(result == 1) {
-			List<Memo> memos = memoRepository.findAll(memo.getPersonId());
+			List<Memo> memos = memoRepository.findAll(21);
 			String MemoJson = gson.toJson(memos);
 			Script.outJson(MemoJson, response);
 		

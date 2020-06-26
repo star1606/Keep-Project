@@ -13,6 +13,8 @@ import com.cos.keep.action.person.PersonJoinAction;
 import com.cos.keep.action.person.PersonJoinProcAction;
 import com.cos.keep.action.person.PersonLoginAction;
 import com.cos.keep.action.person.PersonLoginProcAction;
+import com.cos.keep.action.person.PersonUploadAction;
+import com.cos.keep.action.person.PersonUploadProcAction;
 
 
 @WebServlet("/person")
@@ -41,6 +43,10 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 					return new PersonJoinProcAction();	
 				} else if(cmd.equals("loginProc")) {
 					return new PersonLoginProcAction();	
+				} else if(cmd.equals("profileUpload")) {
+					return new PersonUploadAction();	
+				} else if(cmd.equals("profileUploadProc")) {
+					return new PersonUploadProcAction();	
 				}
 				
 				return null;

@@ -62,36 +62,39 @@ public class MemoRepository {
 		
 		public List<Memo> findAll(int personId){ 
 			StringBuffer sb = new StringBuffer();
-			sb.append("select memo.id, memo.title, memo.content ");  
-			sb.append("from memo inner join person "); 
-			sb.append("on memo.personId = person.id ");
-			sb.append("where memo.personId = ? ");
-			sb.append("ORDER BY memo.id desc");
-					
+			sb.append("SELECT id, personId, title, content, priority, createDate ");					
+			sb.append("FROM memo "); 
+			sb.append("WHERE personId = ? ");
+			sb.append("ORDER by id desc");
+		
+			System.out.println(sb.toString());	
 			final String SQL = sb.toString();	
 			List<Memo> memos = new ArrayList<>();
 			try {
 				conn = DBConn.getConnection();
 				pstmt = conn.prepareStatement(SQL);
+				
+				
 				pstmt.setInt(1, personId);
+				
+				
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
-					Memo memo = Memo.builder()
-							.id(rs.getInt(1))
-							.personId(rs.getInt(2))
-							.title(rs.getString(3))
-							.content(rs.getString(4))
-							.priority(rs.getInt(5))
-							.createDate(rs.getTimestamp(6))
-							.build();
+					Memo memo = new Memo(
+							rs.getInt("id"),
+							rs.getInt("personId"),
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getInt("priority"),
+							rs.getTimestamp("createDate")
 					
+					);
 					memos.add(memo);
 				}
 				
 					return memos;
-				
-				
+
 				
 			} catch (Exception e) {
 				e.printStackTrace();

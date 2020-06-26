@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
-import com.cos.keep.repository.PersonRepository;
 
 public class PersonLoginAction implements Action{
 	

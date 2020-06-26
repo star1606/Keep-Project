@@ -50,37 +50,37 @@
 		
 		<a class="navbar-brand" href="#">Keep</a>
 
-		<!-- Toggler/collapsibe Button -->
+		<!-- Toggler/collapsibe Button  검색버튼 -->
 		
 		<c:if test="${not empty sessionScope.principal.id }">
 			<form class="form-inline" action="">
 				<input class="form-control mr-sm-2" type="text" placeholder="Search">
 				<button class="btn btn-success" type="submit">Search</button>
 			</form>
-		 </c:if>
-		
-		
-		
-		<!-- Navbar links -->
+			
+		<!-- Navbar links navbar 창 -->
 		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-			<c:if test="${not empty sessionScope.principal.id }">
+			
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link " href="/keep/memo/main.jsp">메모</a></li>
 					<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li>
 					
 				</ul>
-			</c:if>				
 		</div>
-			<a class="navbar-brand" href="#">
-			 <img src=""
+			</c:if>				
+		
+	<c:if test="${not empty sessionScope.principal.id}"	>
+		<a class="navbar-brand" href="/keep/person?cmd=profileUpload">
+			 <img
 			 style ="border-radius:15px"
 			 onerror="this.src='/keep/static/image/userProfile.png'"
-			 src="" width = "30px" height="30px" />
+			 src="${sessionScope.principal.userProfile }" width = "30px" height="30px" />
 		</a>	
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+	</c:if>	
 	</nav>
 	
 	<br/>

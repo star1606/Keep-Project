@@ -29,6 +29,75 @@ public class PersonRepository {
 		
 		
 		
+		// 매개변수 하나만 받을거라서 그냥 int 변수형으로
+		public Person findById(int id) {
+			
+			final String SQL = "SELECT * FROM person WHERE id =?";
+			Person person = null;
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				pstmt.setInt(1, id);
+				
+			
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					person = Person.builder()
+							.id(rs.getInt("id"))
+							.personName(rs.getString("personName"))
+							.email(rs.getString("email"))
+							.password(rs.getString("password"))
+							.userProfile(rs.getString("userProfile"))
+							.createDate(rs.getTimestamp("createDate"))
+							.build();
+					
+					
+				}
+					return person;
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "findById(int id): " +e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			
+			
+			return null;
+		}
+		
+		
+		
+		
+		public int update(int id, String userProfile) {
+			final String SQL = "UPDATE person SET userProfile =? WHERE id =?";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				pstmt.setString(1, userProfile);
+				pstmt.setInt(2, id);
+				
+				return pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "update(int id, String userProfile): " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
+			}
+			
+			return -1;
+		}
+		
+		
+		
+		
+		
 		// loginProcAction이면 email과 password가 일치하면
 		// 메소드 실행되서 main으로 넘어가게 해야한다.
 		// 객체로 만들어서 한다.
@@ -70,13 +139,7 @@ public class PersonRepository {
 			
 			return null;
 		}
-		
-		
-		
-		
-		
-		
-		
+					
 		
 		// 매개변수가 뭐 들어가야하는지 이해 부족.
 		public int save(Person person) {

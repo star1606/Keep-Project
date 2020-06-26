@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
+ 
+<%@ include file = "../include/nav.jsp" %> 
 
-<html lang="en">
-<head>
-	<title>Login V19</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="/keep/login/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -40,6 +35,18 @@
   height: 55px;
 }
 
+.wrap-login100 {
+    width: 331px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+
+}
 
 </style>
 
@@ -51,43 +58,27 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form action="" class="login100-form validate-form" method="POST">
+				<form action="/keep/person?cmd=profileUploadProc"
+				class="login100-form validate-form"
+				style="text-align: center;" method="POST" enctype="multipart/form-data">
 					<span class="login100-form-title p-b-33">
-						Account Join
+						Profile Upload
 					</span>
-					
-					Email:
-					<div class="wrap-input100 validate-input " data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br>
-					Password:
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br/>
-					Password: 확인
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br/>
-					Name:
-					<div class="wrap-input100 validate-input" data-validate = "Valid name is required">
-						<input class="input100" type="text" name="personName" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div>
-					
-
-					<div class="container-login100-form-btn m-t-40">
-						<button class="login100-form-btn">
-							Sign up
-						</button>
-					</div>
+			
 				
+					<img id="img__wrap" style="text-align: center; margin-bottom: 25px; border-radius: 50px;" onerror="this.src='/keep/static/image/userProfile.png'" src ="${sessionScope.principal.userProfile }" width="100px" height ="100px"/>
+					
+					<div class = "login100 bg-light" style="text-align: left;">
+						<input type = "file" name="userProfile" id="img__preview" />					
+					</div>		
+					
+					<input type ="hidden" name="id" value="${sessionScope.principal.id}"/>
+							<div class="container-login100-form-btn m-t-40">
+								<button class="login100-form-btn">
+									Upload
+								</button>
+							</div>
+						
 				</form>
 			</div>
 		</div>
@@ -113,7 +104,7 @@
 	<script src="/keep/login/js/main.js"></script>
 
 
-
+<script src="/keep/js/imgPreview.js"></script>
 
 </body>
 </html>
