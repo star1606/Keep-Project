@@ -27,13 +27,14 @@
 		<!-- 메모 한 내용들을 뿌리기 -->
 	 <div id="memo__list" class="container">
 	  
-	<%--<c:forEach var="memo" items="${memos}">
+	<c:forEach var="memo" items="${memos}">
 	    <div id="memo-${memo.id}" class="form-group">
 	       <input type="text" class="form-control"  id="" value="${memo.title}">
 	       <textarea class="form-control" rows="5" id="" name="text">${memo.content}</textarea>
 	    </div>
-	 	   <button type="button" class="btn btn-primary">Submit</button>
-	  </c:forEach>  --%> 
+	 	   <button type="button" class="btn btn-primary">닫기</button> <!-- 수정도 가능하게 해야함 -->
+	 	   <button type="button" class="btn btn-primary">삭제</button>
+	  </c:forEach>
 	
 	</div>
 	

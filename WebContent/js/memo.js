@@ -34,15 +34,20 @@ function memoWrite(personId) {
 }
 
 
-function renderMemoList(memos) {
+function renderMemoList(memos, personId) {
 	for(var memo of memos){
-		$("memo__list").append(makeMemoItem)
+		$("memo__list").append(makeMemoItem(memo, personId));
 	}
 }
 
 
 
 
-function makeMemoItem(memoItem) {
-	
+function makeMemoItem(memo, personId) {
+	var memoItem = `<div id="memo__list" class="container">`;
+		memoItem += `<div id="memo-${memo.id}" class="form-group">`;
+		memoItem += ` <input type="text" class="form-control"  id="" value="${memo.title}">`;
+		memoItem += `<textarea class="form-control" rows="5" id="" name="text">${memo.content}</textarea>`;
+		memoItem += `</div>`;
+		
 }
