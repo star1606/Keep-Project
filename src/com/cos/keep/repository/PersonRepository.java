@@ -45,7 +45,7 @@ public class PersonRepository {
 				pstmt.setString(2, password);
 				
 				rs = pstmt.executeQuery();
-				System.out.println(rs);
+			
 				if (rs.next()) {
 					person = new Person();
 					person.setId(rs.getInt("id"));

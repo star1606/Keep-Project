@@ -34,18 +34,17 @@ public class MemoRepository {
 		
 		
 		public int save(Memo memo) {
-			final String SQL = "INSERT INTO memo(id, personId, title, content, priority, createDate) "
-					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, ?, sysdate)";
+			final String SQL = "INSERT INTO memo(id, personId, title, content, createDate) "
+					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, sysdate)";
 			
 			try {
 				conn = DBConn.getConnection();
 				pstmt = conn.prepareStatement(SQL); // 버퍼 달기
 				
 				//물음표 채우기
-				pstmt.setInt(1, memo.getId());
+				pstmt.setInt(1, memo.getPersonId());
 				pstmt.setString(2, memo.getTitle());
 				pstmt.setString(3, memo.getContent());
-				pstmt.setInt(4, memo.getPriority());
 				
 				return pstmt.executeUpdate();
 				

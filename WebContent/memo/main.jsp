@@ -8,14 +8,14 @@
 	
 	<!-- 메모하기 -->	
 	<div class="container">
- 	  <form action="/keep/memo?cmd=writeProc" method="post">
+ 	  
 		    <div class="form-group">
-		      <input type="hidden" name="id" value="${sessionScope.principal.id}">
+		      
 	  		  <input type="text" class="form-control"  id="memo__title__form" name="title" >
 		      <textarea class="form-control" rows="5" id="memo__content__form" name="content" required="required"></textarea>
-		    </div>
-		      <button type="submit" class="btn btn-primary">닫기</button>
-	  </form>  
+		    
+		      <button onclick="memoWrite(${sessionScope.principal.id})" type="button"  class="btn btn-primary">닫기</button>
+	   		</div>
 	</div>
 	<br>
 	<br>
@@ -23,13 +23,13 @@
 		<!-- 메모 한 내용들을 뿌리기 -->
 	 <div id="memo__list" class="container">
 	  
-	  <c:forEach var="memo" items="${memos}">
+	<%--  <c:forEach var="memo" items="${memos}">
 	    <div id="memo-${memo.id}" class="form-group">
 	       <input type="text" class="form-control"  id="" value="${memo.title}">
 	       <textarea class="form-control" rows="5" id="" name="text">${memo.content}</textarea>
 	    </div>
 	 	   <button type="button" class="btn btn-primary">Submit</button>
-	  </c:forEach>
+	  </c:forEach>--%> 
 	
 	</div>
 	
@@ -42,6 +42,31 @@
 </body>
 
 <script>
+
+function memoWrite(personId) {
+
+
+		var data = {
+				personId : personId,
+				title : $("#memo__title__form").val(),
+				content : $("#memo__content__form").val()
+				
+				
+		};
+	
+		$.ajax({
+			type : "post",
+			url : "/keep/memo?cmd=writeProc",
+			data : JSON.stringify(data),
+			contentType : "application/json; charset=utf-8",
+			dataType : "json"
+		}).done(function(result) {
+			alert(result);
+		}).fail(function() {
+			
+		});
+}
+
 
 
 </script>
