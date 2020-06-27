@@ -72,7 +72,7 @@ public class PersonRepository {
 		
 		
 		
-		public int update(int id, String userProfile) {
+		public int updateProfile(int id, String userProfile) {
 			final String SQL = "UPDATE person SET userProfile =? WHERE id =?";
 			
 			try {

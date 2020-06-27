@@ -3,6 +3,7 @@ package com.cos.keep.action.person;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,7 @@ public class PersonLoginProcAction implements Action{
 		}
 		
 		// 2. 파라미터 받기
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		System.out.println(email);
@@ -37,6 +39,15 @@ public class PersonLoginProcAction implements Action{
 		// 3. 로그인 폼으로 DB연결후 찾아서 맞으면 select하는 함수 호출
 		PersonRepository personRepository = PersonRepository.getInstance();
 		Person person = personRepository.findByEmailandPassword(email, password);
+		
+		
+		
+	
+		
+		
+		
+		
+		
 		
 		
 		
@@ -49,16 +60,11 @@ public class PersonLoginProcAction implements Action{
 			HttpSession session = request.getSession();
 			session.setAttribute("principal", person);
 			// jsession아이디로 principal 자기꺼 확인
-				
-						
-		
-			
-
 			
 			
 			
 			
-			Script.href("로그인 성공", "/keep/memo/main.jsp", response);
+			Script.href("로그인 성공", "/keep/memo?cmd=main", response);
 			
 		
 		} else {

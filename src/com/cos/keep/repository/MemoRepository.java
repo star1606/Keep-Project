@@ -29,13 +29,13 @@ public class MemoRepository {
 		private ResultSet rs = null;
 	
 		
-		
+		// 메소드 를 만드는데 이거는 email을 이용해서 select해서 유일한 id를 찾는 쿼리다
 		
 		
 		
 		public int save(Memo memo) {
-			final String SQL = "INSERT INTO memo(id, personId, title, content, createDate) "
-					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, sysdate)";
+			final String SQL = "INSERT INTO memo(id, personId, title, content, priority, createDate) "
+					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, ?, sysdate)";
 			
 			try {
 				conn = DBConn.getConnection();
@@ -45,6 +45,8 @@ public class MemoRepository {
 				pstmt.setInt(1, memo.getPersonId());
 				pstmt.setString(2, memo.getTitle());
 				pstmt.setString(3, memo.getContent());
+				pstmt.setInt(4, memo.getPriority());
+				
 				
 				return pstmt.executeUpdate();
 				
@@ -111,55 +113,6 @@ public class MemoRepository {
 		
 		
 		
-		// loginProcAction이면 email과 password가 일치하면
-		// 메소드 실행되서 main으로 넘어가게 해야한다.
-		// 객체로 만들어서 한다.
-		public Person findByEmailandPassword(String email, String password) {
-			
-			final String SQL = "";
-			Person person = null;
-			
-			try {
-				conn = DBConn.getConnection();
-				pstmt = conn.prepareStatement(SQL);
-				
-				pstmt.setString(1, email);
-				pstmt.setString(2, password);
-				
-				rs = pstmt.executeQuery();
-				
-				if (rs.next()) {
-					person = new Person();
-					person.setId(rs.getInt("id"));
-					person.setEmail(rs.getString("email"));
-					person.setPersonName(rs.getString("personName"));
-					person.setPassword(rs.getString("password"));
-					person.setCreateDate(rs.getTimestamp("createDate"));
-					
-				}
-				
-				return person;
-				
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println(TAG + "findByEmailandPassword" + e.getMessage());
-			} finally {
-				DBConn.close(conn, pstmt, rs);
-			}
-			
-			
-			return null;
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		// 매개변수가 뭐 들어가야하는지 이해 부족.
 		
 			
 			

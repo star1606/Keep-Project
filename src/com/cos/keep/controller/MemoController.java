@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
+import com.cos.keep.action.memo.MemoDeleteAction;
+import com.cos.keep.action.memo.MemoMainAction;
+import com.cos.keep.action.memo.MemoUpdateAction;
 import com.cos.keep.action.memo.MemoWriteProcAction;
-import com.cos.keep.action.person.PersonJoinAction;
-import com.cos.keep.action.person.PersonJoinProcAction;
-import com.cos.keep.action.person.PersonLoginAction;
 
 @WebServlet("/memo")
 public class MemoController extends HttpServlet {
@@ -33,7 +33,14 @@ public class MemoController extends HttpServlet {
 		
 		 if (cmd.equals("writeProc")) {
 			 return new MemoWriteProcAction();
-		 }	 
+		 } else if(cmd.equals("delete")) {
+			 return new MemoDeleteAction();
+		 } else if(cmd.equals("update")) {
+			 return new MemoUpdateAction();
+		 } else if(cmd.equals("main")) {
+			 return new MemoMainAction();
+		 }	 	 	 	 
+				 	 
 			
 		
 
