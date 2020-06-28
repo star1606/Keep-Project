@@ -87,7 +87,7 @@
 				</c:when>
 				
 				<c:otherwise>
-					<c:redirect url="/memo/main.jsp"></c:redirect>
+					<c:redirect url="/memo?cmd=main"></c:redirect>
 				</c:otherwise>
 			</c:choose>
 			</div>

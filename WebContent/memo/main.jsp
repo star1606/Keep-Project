@@ -3,7 +3,7 @@
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ include file = "../include/nav.jsp" %>
-	
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
 
 
 <style>
@@ -21,13 +21,11 @@
 		color: #5F6368;
 	}
 	
-	#del, #delList {
+	#delList {
 		position: absolute;
 		bottom: 10px;
 		left: 10px;	
-		background-color: #202124;
-		border-color: #202124;
-		color: #5F6368;
+		color: #BEBFBF;
 	}
 	
 	#memo__title__form, #memo__content__form, #memo__title__list, #memo__content__list
@@ -70,7 +68,9 @@
 	       <input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">
 	       <textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
 	   	   <button type="button" class="btn btn-primary" id="closeList">닫기</button> <!-- 수정도 가능하게 해야함 -->
-	 	   <button type="button" class="btn btn-primary" id="delList">삭제</button>	   
+	 	   <i onclick="memoDelete(${memo.id})" class="material-icons" id="delList">delete</i>
+	 	    <!-- <button type="button" class="btn btn-primary" id="delList">삭제</button> -->
+	 	 	<!--  아이콘 색깔 #BEBFBF -->
 	    </div>
 	 	  
 	 	   

@@ -48,7 +48,7 @@
    <nav class="navbar navbar-expand-md bg-custom navbar-dark ">
 		<!-- Brand -->
 		
-		<a class="navbar-brand" href="#">Keep</a>
+		<a class="navbar-brand" href="/keep/memo?cmd=main">Keep</a>
 
 		<!-- Toggler/collapsibe Button  검색버튼 -->
 		

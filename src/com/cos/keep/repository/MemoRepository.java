@@ -33,6 +33,46 @@ public class MemoRepository {
 		
 		
 		
+		
+		
+		
+		public int deleteById(int id){ 
+			final String SQL = "DELETE FROM memo WHERE id =?";
+			
+		
+			
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				
+				pstmt.setInt(1, id);
+				
+				
+				return pstmt.executeUpdate();
+			
+
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "MemoDelete(int id)" + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			
+			
+			return -1;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 		public int save(Memo memo) {
 			final String SQL = "INSERT INTO memo(id, personId, title, content, priority, createDate) "
 					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, ?, sysdate)";

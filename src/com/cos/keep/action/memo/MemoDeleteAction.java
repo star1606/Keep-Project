@@ -26,40 +26,20 @@ public class MemoDeleteAction implements Action{
 	
 		
 		
-		BufferedReader br = request.getReader();
-		
-		String input = null;
-		
-		StringBuilder sb = new StringBuilder();
-		
-		while((input = br.readLine())!= null) {
-				sb.append(input);
+		if(request.getParameter("memoId") == null ||
+				request.getParameter("memoId").equals("")) {
+			return;
 		}
 		
-		System.out.println(sb.toString());
-		
-		Gson gson = new Gson();
-		
-		Memo memo = gson.fromJson(sb.toString(), Memo.class);
+		int memoId = Integer.parseInt(request.getParameter("memoId"));
+		System.out.println("MemoDeleteAction: id " + memoId );
 		
 		MemoRepository memoRepository =
 				MemoRepository.getInstance();
 		
 		
-		int result = memoRepository.save(memo);
-		System.out.println(result);
-	
-	
-		if(result == 1) {
-			List<Memo> memos = memoRepository.findAll(memo.getPersonId());
-			String MemoJson = gson.toJson(memos);
-			Script.outJson(MemoJson, response);
-		
-		} else {
-			
-			Script.outJson(result+"", response);
-		}
-		
+		int result = memoRepository.deleteById(memoId);
+		Script.outText(result+"", response);
 	
 					
 		}
