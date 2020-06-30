@@ -6,11 +6,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
 
 	<!--  아이콘 색깔 #BEBFBF -->
-<style>
+	
+
+<style>	
+	
 	div {
 		display: :inline-block;
 		position: relative;
 	}
+	
 	
 	#close, #closeList {
 		position: absolute;
@@ -51,7 +55,7 @@
 		color: #E8EAED;
 	}
 
-
+	
 
 </style>
 	
@@ -79,12 +83,15 @@
 	    <div id="memo-${memo.id}" class="form-group">
 	       <input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">
 	       <textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
-	       
-	       <i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck">check</i>
-	          	   
+	       <c:if test="${memo.priority == 1}">
+	     	    <i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer; color: red;" >check</i>
+	       </c:if> 
+	       <c:if test="${memo.priority == 0}">
+	        	<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;" >check</i>
+	       </c:if>
 	   	   <button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button> <!-- 수정도 가능하게 해야함 -->
 	   	   
-	 	   <i onclick="memoDelete(${memo.id})" class="material-icons" id="delList">delete</i>
+	 	   <i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
 	 	   
 	 	   
 	 	 

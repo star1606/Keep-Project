@@ -13,6 +13,6 @@ $(function(){
 </script>
 </head>
 <body>
-<div class="content">hello world<div>
+<div class="content">hello world</div>
 </body>
 </html>
