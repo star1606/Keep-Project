@@ -63,13 +63,16 @@
 			
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link " href="/keep/memo/main.jsp">메모</a></li>
-					<li class="nav-item" style="padding-right:30px;"  ><a class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li>
+					<li class="nav-item" style="padding-right:60px;"  ><a class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li>
 					
 				</ul>
 		</div>
 			</c:if>				
 		
 	<c:if test="${not empty sessionScope.principal.id}"	>
+	<ul class="navbar-nav">
+	     <li class="nav-item"><a class="nav-link " href="/keep/person?cmd=logout">로그아웃</a></li>
+	</ul>
 		<a class="navbar-brand" href="/keep/person?cmd=profileUpload">
 			 <img
 			 style ="border-radius:15px"

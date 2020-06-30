@@ -34,6 +34,110 @@ public class MemoRepository {
 		
 		
 		
+		public int priorityUpdate(int id, int changeNum) {
+			final String SQL = "UPDATE memo SET priority = ? WHERE id =?";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL); // 버퍼 달기
+				
+				//물음표 채우기
+			
+				pstmt.setInt(1, changeNum);
+				pstmt.setInt(2, id);
+				
+				return pstmt.executeUpdate();
+				
+				
+								 	
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "priorityUpdate(int id, int changeNum)" + e.getMessage());
+			
+			} finally {
+				DBConn.close(conn, pstmt);
+			}	
+			return -1; //실패
+		}
+		
+		
+		
+		
+		
+		public int update(Memo memo) {
+			final String SQL = "UPDATE memo SET title =?, content =? WHERE id =?";
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL); // 버퍼 달기
+				
+				//물음표 채우기
+			
+				pstmt.setString(1, memo.getTitle());
+				pstmt.setString(2, memo.getContent());
+				pstmt.setInt(3, memo.getId());
+				
+				
+				return pstmt.executeUpdate();
+				
+				
+								 	
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "update(Memo memo)" + e.getMessage());
+			
+			} finally {
+				DBConn.close(conn, pstmt);
+			}	
+			return -1; //실패
+		}
+		
+		
+		public int update2(Memo memo){ 
+			
+			StringBuilder sb = new StringBuilder();
+			sb.append("UPDATE memo SET title =?, content =? WHERE id =?");
+			System.out.println(sb.toString());
+			
+			final String SQL = sb.toString();
+			
+			try {
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				
+				pstmt.setString(1, memo.getTitle());
+				pstmt.setString(2, memo.getContent());
+				pstmt.setInt(3, memo.getId());
+				
+				return pstmt.executeUpdate();
+			
+
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "update(Memo memo) : " + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt);
+			}
+			
+			
+			return -1;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		public int deleteById(int id){ 
@@ -107,7 +211,7 @@ public class MemoRepository {
 			sb.append("SELECT id, personId, title, content, priority, createDate ");					
 			sb.append("FROM memo "); 
 			sb.append("WHERE personId = ? ");
-			sb.append("ORDER by id desc");
+			sb.append("ORDER by priority desc, id desc");
 		
 			System.out.println(sb.toString());	
 			final String SQL = sb.toString();	

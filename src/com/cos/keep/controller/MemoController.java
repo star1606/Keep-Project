@@ -11,35 +11,44 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.keep.action.Action;
 import com.cos.keep.action.memo.MemoDeleteAction;
 import com.cos.keep.action.memo.MemoMainAction;
+import com.cos.keep.action.memo.MemoPriorityAction;
 import com.cos.keep.action.memo.MemoUpdateAction;
 import com.cos.keep.action.memo.MemoWriteProcAction;
 
 @WebServlet("/memo")
 public class MemoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private static final String TAG = "MemoController : ";
+	
 	protected void doProcesss(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
 		String cmd = request.getParameter("cmd");
+		System.out.println(TAG + "doProcess: " + cmd);
 		Action action = router(cmd);
 		action.execute(request, response);
-
+		
 	}
 
 	private Action router(String cmd) {
 		
 		 if (cmd.equals("writeProc")) {
 			 return new MemoWriteProcAction();
+			 
 		 } else if(cmd.equals("delete")) {
 			 return new MemoDeleteAction();
+			 
 		 } else if(cmd.equals("update")) {
 			 return new MemoUpdateAction();
+			 
 		 } else if(cmd.equals("main")) {
 			 return new MemoMainAction();
-		 }	 	 	 	 
+			 
+		 }  else if(cmd.equals("priority")) {
+			 return new MemoPriorityAction();
+		 }	 		 	 	 	 
 				 	 
 			
 		

@@ -5,7 +5,7 @@
 <%@ include file = "../include/nav.jsp" %>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
 
-
+	<!--  아이콘 색깔 #BEBFBF -->
 <style>
 	div {
 		display: :inline-block;
@@ -28,8 +28,18 @@
 		color: #BEBFBF;
 	}
 	
+	#memoCheck {
+		position: absolute;
+		color: #BEBFBF;
+		top : 6px;
+		right: 16px;
+	}
+	
+	
+	
 	#memo__title__form, #memo__content__form, #memo__title__list, #memo__content__list
 	{
+	color: #E8EAED;
     background-color:#202124;
     border-color: #5F6368;
 	}
@@ -38,6 +48,7 @@
 	
 	textarea {
 		display: :block;
+		color: #E8EAED;
 	}
 
 
@@ -61,22 +72,25 @@
 	<br>
 	
 		<!-- 메모 한 내용들을 뿌리기 -->
-	 <div id="memo__list" class="container">
+	<div id="memo__list" class="container">
 	  
 	<c:forEach var="memo" items="${memos}">
+	    
 	    <div id="memo-${memo.id}" class="form-group">
 	       <input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">
 	       <textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
-	   	   <button type="button" class="btn btn-primary" id="closeList">닫기</button> <!-- 수정도 가능하게 해야함 -->
+	       
+	       <i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck">check</i>
+	          	   
+	   	   <button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button> <!-- 수정도 가능하게 해야함 -->
+	   	   
 	 	   <i onclick="memoDelete(${memo.id})" class="material-icons" id="delList">delete</i>
-	 	    <!-- <button type="button" class="btn btn-primary" id="delList">삭제</button> -->
-	 	 	<!--  아이콘 색깔 #BEBFBF -->
-	    </div>
-	 	  
 	 	   
-	 	<br/>
-	 	<br/>	 	
-	  </c:forEach>
+	 	   
+	 	 
+	    </div><br/><br/>
+	 	  		 	
+	</c:forEach>
 	
 	</div>
 	
