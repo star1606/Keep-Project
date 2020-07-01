@@ -35,11 +35,13 @@
 
 <style>
 
-.wrap-input100, .input100 {
+.wrap-input100 {
 
 	height: 50px;
 }
-
+input.input100 {
+    height: 48px;
+}
 
 </style>
 

@@ -41,7 +41,31 @@ public class PersonJoinProcAction implements Action{
 		String email = request.getParameter("email");
 		String personName = request.getParameter("personName");
 		String password = request.getParameter("password");
+		
+		
+		
 	
+		
+		
+		
+		
+		
+		
+		//4. DB연결 -UsersRepository save()호출
+		// 그거를 DB에다가 집어넣는 insert작업을 수행하겠네.
+		PersonRepository personRepository = 
+				PersonRepository.getInstance();
+		
+		
+	int checkResult = personRepository.findByEmail(email);
+	System.out.println(checkResult);
+		
+		if(checkResult >= 1) {
+			Script.back("이미 사용된 이메일입니다. 다른 이메일을 선택하세요.", response);
+			System.out.println("이메일 일치");
+			return;
+		} 
+		
 		
 		Person person = Person.builder()
 				.email(email)
@@ -49,10 +73,7 @@ public class PersonJoinProcAction implements Action{
 				.password(password)
 				.build();
 		
-		//4. DB연결 -UsersRepository save()호출
-		// 그거를 DB에다가 집어넣는 insert작업을 수행하겠네.
-		PersonRepository personRepository = 
-				PersonRepository.getInstance();
+		
 		
 		int result = personRepository.save(person);
 		
