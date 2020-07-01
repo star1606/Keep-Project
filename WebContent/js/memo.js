@@ -1,10 +1,27 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function memoCheck(id, priority){
 
-//	var data = {
-//		"id" : id,
-//		"priority" : priority
-//	};
+// var data = {
+// "id" : id,
+// "priority" : priority
+// };
 		console.log(id);
 		console.log(priority);
 	$.ajax({
@@ -37,8 +54,8 @@ function memoCheck(id, priority){
 			
 			$("#memo__list").append(memoItem);
 		}
-		//var memos = $("#memo-" + memoId);
-		//$("#memo__list").empty();
+		// var memos = $("#memo-" + memoId);
+		// $("#memo__list").empty();
 		
 	}).fail(function(error) {
 		alert("우선순위 실패");

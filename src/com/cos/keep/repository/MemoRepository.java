@@ -206,6 +206,68 @@ public class MemoRepository {
 			return -1; //½ÇÆÐ
 		}
 		
+		
+		
+		
+		
+		public List<Memo> findSearch(int personId, String keyword){ 
+			
+			
+			final String SQL = "SELECT id, personId, title, content, priority, createDate FROM memo " + 
+					"WHERE personId =? AND (to_char(content) like ? or title like ?)";
+		
+			try {
+				List<Memo> memos = new ArrayList<>();
+				conn = DBConn.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				
+				pstmt.setInt(1, personId);
+				pstmt.setString(2, "%"+ keyword +"%");
+				pstmt.setString(3, "%"+ keyword +"%");
+				
+				rs = pstmt.executeQuery();
+				 
+				while (rs.next()) {
+					Memo memo = new Memo(
+							rs.getInt("id"),
+							rs.getInt("personId"),
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getInt("priority"),
+							rs.getTimestamp("createDate")
+							
+					
+					);
+					memos.add(memo);
+				}
+					return memos;
+				
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(TAG + "findSearch(int personId, String keyword)" + e.getMessage());
+			} finally {
+				DBConn.close(conn, pstmt, rs);
+			}
+			
+			
+			return null;
+		}
+					
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		public List<Memo> findAll(int personId){ 
 			StringBuffer sb = new StringBuffer();
 			sb.append("SELECT id, personId, title, content, priority, createDate ");					
