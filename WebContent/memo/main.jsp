@@ -39,7 +39,7 @@
 		right: 16px;
 	}
 	
-	
+
 	
 	#memo__title__form, #memo__content__form, #memo__title__list, #memo__content__list
 	{

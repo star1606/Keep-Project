@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  
-<%@ include file = "../include/nav.jsp" %> 
+
 
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="/keep/login/images/icons/favicon.ico"/>
@@ -26,27 +26,28 @@
 	<link rel="stylesheet" type="text/css" href="/keep/login/css/main.css">
 <!--===============================================================================================-->
 
-
+<%@ include file = "../include/nav2.jsp" %> 
 
 <style>
 
-.wrap-input100, .input100 {
 
-  height: 55px;
-}
+.wrap-input100, .input100 { 
 
-.wrap-login100 {
-    width: 331px;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+   height: 55px; 
+ } 
 
-}
+.wrap-login100 { 
+     width: 331px; 
+     background: #fff; 
+    border-radius: 10px; 
+     overflow: hidden; 
+     box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1); 
+     -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1); 
+     -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1); 
+     -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1); 
+     -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1); 
+
+ } 
 
 </style>
 

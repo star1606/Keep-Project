@@ -45,6 +45,10 @@ html body {
 	background-color: #202124;
 }
 
+html body {
+ background: #E9FAFF;
+
+}
 
 
 .navbar-nav>li {
@@ -101,23 +105,6 @@ html body {
 
 
 
-			<div class="row">
-
-				<div id="custom-search-input">
-					<form class="form-inline">
-						<div class="input-group col-md-12">
-
-							<span class="input-group-btn">
-								<button class="btn btn-danger" type="button">
-									<span class=" glyphicon glyphicon-search"></span>
-								</button>
-							</span> <input type="text" class="  search-query form-control"
-								placeholder="Search" />
-
-						</div>
-					</form>
-				</div>
-			</div>
 
 			<!-- 			<div class="input-group md-form form-sm form-1 pl-0" -->
 			<!-- 				style="height: 38px; width: 615px;"> -->
