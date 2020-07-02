@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.keep.action.Action;
 import com.cos.keep.model.Person;
 import com.cos.keep.repository.PersonRepository;
+import com.cos.keep.util.SHA256;
 import com.cos.keep.util.Script;
 
 public class PersonJoinProcAction implements Action{
@@ -40,9 +41,9 @@ public class PersonJoinProcAction implements Action{
 		
 		String email = request.getParameter("email");
 		String personName = request.getParameter("personName");
-		String password = request.getParameter("password");
 		
-		
+		String rawpassword = request.getParameter("password");
+		String password = SHA256.encodeSha256(rawpassword);
 		
 	
 		

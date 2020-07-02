@@ -45,7 +45,7 @@
 					</span>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" value="${cookie.remember.value }" name="email" placeholder="Email">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div>
@@ -56,21 +56,32 @@
 						<span class="focus-input100-2"></span>
 					</div>
 
-				
+					<br><br>
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn">
 							로그인
 						</button>
 					</div>
-
+	
+					<div class="container-login100-form-btn m-t-20">
+						<button class="login100-form-btn">
+							카카오 로그인
+						</button>
+					</div>
+	
 					<div class="text-center p-t-45 p-b-4">
 						<span class="txt1">
-							아이디 기억하기
+						<c:choose>
+							<c:when test="${empty cookie.remember }">
+								<input type="checkbox" name= "remember" id="remember"> 아이디 기억하기
+							</c:when>
+							<c:otherwise>								
+								<input type="checkbox" name= "remember" id="remember" checked> 아이디 기억하기
+							</c:otherwise>	
+						</c:choose>
 						</span>
 
-						<a href="#" class="txt2 hov1">
-							Username / Password?
-						</a>
+						
 					</div>
 
 					<!-- 회원가입  -->
