@@ -1,4 +1,6 @@
-package com.cos.blog.action.kakao;
+package com.cos.keep.action.kakao;
+
+
 
 import java.io.IOException;
 
@@ -6,16 +8,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cos.blog.action.Action;
-import com.cos.blog.util.Script;
+import com.cos.keep.action.Action;
+import com.cos.keep.util.Script;
 
-public class KaKaoCallbackAction implements Action {
+
+
+public class KakaoCallbackAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String code = request.getParameter("code");
 			
 			System.out.println(code);
-			Script.outText(code, response); // printwriterë¡œ ì˜ëŠ”ê²ƒ.
-			//htmlì•ˆ ê°€ê³  ì—¬ê¸°ì„œ ë°”ë¡œ ìš”ì²­í•˜ê³  ì‘ë‹µí•œë‹¤.
+			Script.outText(code, response); // printwriter·Î ½î´Â°Í.
+			//html¾È °¡°í ¿©±â¼­ ¹Ù·Î ¿äÃ»ÇÏ°í ÀÀ´äÇÑ´Ù.
 	}
 }
