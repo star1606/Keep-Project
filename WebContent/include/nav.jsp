@@ -68,6 +68,10 @@ html body {
 	background-color: #525355;
 	border-color: #525355;
 }
+
+
+
+
 </style>
 
 <body>
@@ -135,8 +139,8 @@ html body {
 				<ul class="navbar-nav">
 
 
-					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" title="메모">lightbulb_outline</i></li>
-					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" title="리마인더">notifications_none</i></li>
+					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="메모">lightbulb_outline</i></li>
+					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
 					<!-- 					<li class="nav-item "><a class="nav-link " -->
 					<!-- 						href="/keep/memo?cmd=main">메모</a></li> -->
 					<!-- 					<li class="nav-item" style="padding-right: 60px;"><a -->

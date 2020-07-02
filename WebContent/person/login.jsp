@@ -32,6 +32,12 @@
 <!--===============================================================================================-->
 </head>
 <body>
+
+<style>
+	
+
+</style>
+
 	 <!-- 버튼 눌렀을 때 데이터값 일치하면 로그인되서 main으로 넘어가고 아니면 안됨 -->
 	<div class="limiter">
 		<div class="container-login100">
@@ -56,27 +62,27 @@
 						<span class="focus-input100-2"></span>
 					</div>
 
-					<br><br>
+					<br>
 					<div class="container-login100-form-btn m-t-20">
 						<button class="login100-form-btn">
-							로그인
+							<h6>로그인</h6>
 						</button>
 					</div>
-	
-					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
-							카카오 로그인
-						</button>
+						
+						
+					<div class="container-login100-form-btn m-t-20 justify-content-center">
+						<a href="https://kauth.kakao.com/oauth/authorize?client_id=69df22722bf186a619e27a21cba0f9fa&redirect_uri=http://localhost:8000/blog/oauth/kakao?cmd=callback&response_type=code">
+						<img width="390px" height="60px" src="/keep/static/image/kakao_login_medium_wide.png"></img></a>								
 					</div>
 	
 					<div class="text-center p-t-45 p-b-4">
 						<span class="txt1">
 						<c:choose>
 							<c:when test="${empty cookie.remember }">
-								<input type="checkbox" name= "remember" id="remember"> 아이디 기억하기
+								<input type="checkbox" name= "remember" id="remember"> 이메일 기억하기
 							</c:when>
 							<c:otherwise>								
-								<input type="checkbox" name= "remember" id="remember" checked> 아이디 기억하기
+								<input type="checkbox" name= "remember" id="remember" checked> 이메일 기억하기
 							</c:otherwise>	
 						</c:choose>
 						</span>
@@ -87,11 +93,11 @@
 					<!-- 회원가입  -->
 					<div class="text-center">
 						<span class="txt1">
-							Create an account?
+							Create an email?
 						</span>
 
 						<a href="/keep/person?cmd=join" class="txt2 hov1">
-							Sign up
+							이메일 만들기
 						</a>
 					</div>
 				</form>
