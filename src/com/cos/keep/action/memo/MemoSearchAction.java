@@ -13,6 +13,7 @@ import com.cos.keep.action.Action;
 import com.cos.keep.model.Memo;
 import com.cos.keep.model.Person;
 import com.cos.keep.repository.MemoRepository;
+import com.cos.keep.util.Script;
 
 public class MemoSearchAction implements Action {
 
@@ -22,6 +23,9 @@ public class MemoSearchAction implements Action {
 		// 나중에 blog로 보고 search에 validation 체크 확인할것
 
 		if (request.getParameter("keyword") == null || request.getParameter("keyword").equals("")) {
+			Script.back("검색 키워드가 없습니다.", response);
+			
+		
 			return;
 		}
 		

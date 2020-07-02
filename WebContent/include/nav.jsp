@@ -15,10 +15,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- search bootstrap -->
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- modal library -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>Keep</title>
 
 <style>
@@ -76,12 +85,23 @@ html body {
 	font: red;
 }
 
-.dropdown-item
- {color: #919294;}
- 
- .btn-primary{background-color: #202124;
-    border-color: #202124;}
+.dropdown-item {
+	color: #919294;
+}
 
+.btn-primary {
+	background-color: #202124;
+	border-color: #202124;
+}
+
+.input-group .form-control {
+	width: 340%;
+	margin-bottom: 0;
+}
+
+.margin-left {
+	margin-left: 25px !important;
+}
 </style>
 
 </head>
@@ -93,8 +113,8 @@ html body {
 
 <body>
 
-	
-		
+
+
 
 
 	<nav class="navbar navbar-expand-md bg-custom navbar-dark ">
@@ -107,7 +127,7 @@ html body {
 		<c:if test="${not empty sessionScope.principal.id }">
 
 
-			
+
 
 
 			<div class="row">
@@ -157,43 +177,35 @@ html body {
 
 
 			<!-- Navbar links navbar 창 -->
-			<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-
-				<ul class="navbar-nav">
-
-
-					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="메모">lightbulb_outline</i></li>
-					<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
-					<!-- 					<li class="nav-item "><a class="nav-link " -->
-					<!-- 						href="/keep/memo?cmd=main">메모</a></li> -->
-					<!-- 					<li class="nav-item" style="padding-right: 60px;"><a -->
-					<!-- 						class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li> -->
-
-				</ul>
-			</div>
+			<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar"></div>
 		</c:if>
 
 
-			
+
 
 
 
 		<div class="container mt-3 justify-content-end" style="padding-right: 0px;">
 
+			<ul class="navbar-nav">
+				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="메모">lightbulb_outline</i></li>
+				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
+			</ul>
+
+
 			<div class="dropdown">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle margin-left" data-toggle="dropdown">
 
 					<img style="border-radius: 15px" onerror="this.src='/keep/static/image/userProfile.png'" src="${sessionScope.principal.userProfile }" width="30px" height="30px" />
 
 				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/keep/person?cmd=update">회원정보 수정</a>
-					<a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> 
-					<a class="dropdown-item" href="/keep/person?cmd=logout">로그아웃</a>
+					<a class="dropdown-item" href="/keep/person?cmd=update">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
+						href="/keep/person?cmd=logout">로그아웃</a>
 				</div>
 			</div>
 		</div>
-		</nav>
+	</nav>
 
 
 
