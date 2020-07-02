@@ -102,6 +102,11 @@ html body {
 .margin-left {
 	margin-left: 25px !important;
 }
+
+.form-inline .input-group>.form-control {
+    width: 340%;
+}
+
 </style>
 
 </head>

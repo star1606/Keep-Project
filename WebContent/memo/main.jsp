@@ -71,7 +71,7 @@ textarea {
 
 		<div id="memo-${memo.id}" class="form-group">
 			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}">
-			<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
+			<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="">${memo.content}</textarea>
 			<c:if test="${memo.priority == 1}">
 				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer; color: red;">check</i>
 			</c:if>

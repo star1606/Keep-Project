@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,12 +67,61 @@ textarea {
 
 <body>
 
+	
+	<div class="modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" data-bind="click: cancel">&times;</button>
+        <h3>Add Note</h3>
+    </div>
+    <div class="modal-body">
+        <form action="#" data-bind="submit: add">
+            <div class="control-group">
+                <label class="control-label">New note:</label>
+                <div class="controls">
+                    <textarea data-bind="value: text"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox"><input type="checkbox" data-bind="checked: important" />Important</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" data-bind="click: add">Add Note</a>
+        <a href="#" class="btn" data-bind="click: cancel">Cancel</a>
+    </div>
+</div>
+	
+	
+
 	<div style="float: right">
 		<button type="button" value="Decline" class="btn btn-danger" data-toggle="modal" data-target="#declineModal">Decline</button>
 	</div>
 
 
+	<div id="memo__list" class="container">
 
+	<c:forEach var="memo" items="${memos}">
+
+		<div id="memo-${memo.id}" class="form-group">
+			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}" data-toggle="modal" data-target="#myModal">
+			<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="" data-toggle="modal" href="#myModal">${memo.content}</textarea>
+			<c:if test="${memo.priority == 1}">
+				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer; color: red;">check</i>
+			</c:if>
+			<c:if test="${memo.priority == 0}">
+				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>
+			</c:if>
+			<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
+			<!-- 수정도 가능하게 해야함 -->
+
+			<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
+
+
+
+		</div>
 
 
 	<!-- Modal -->
@@ -80,17 +129,36 @@ textarea {
 		<div class="modal-dialog">
 			<div class="modal-content">
 			
-					<input type="text" class="form-control" id="memo__title__list" value="${memo.title}">
-					<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
+					<input type="text" class="form-control" id="" value="${memo.title}">
+					<textarea class="form-control" rows="5" id="" name="text">${memo.content}</textarea>
 					<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
 				
 			</div>
 		</div>
 	</div>
+	<br />
+		<br />
+
+	</c:forEach>
+
+<button type="button" data-toggle="modal" data-target="#myModal">모달 창 열기</button>
+
+<a data-toggle="modal" href="#myModal">모달 창 열기</a>
 
 
 
 
+
+</div>
+
+
+<script>
+
+ var modal = document.getElementById("memo-${memo.id}");
+ var memo__title__list = document.getElementById("memo__title__list");
+ var memo__content__list = document.getElementById("memo__content__list");
+
+</script>
 
 	<!--         <button data-toggle="modal" data-target="#intro"> -->
 	<!--             모달 실행 -->
