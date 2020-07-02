@@ -29,23 +29,20 @@ div {
 	color: #BEBFBF;
 }
 
-#memoCheck {
+#reminderCheck {
 	position: absolute;
 	color: #BEBFBF;
 	top: 6px;
 	right: 16px;
 }
 
-#memo__title__form, #memo__content__form, #memo__title__list, #memo__content__list {
+#reminder__content__form, #reminder__content__list {
 	color: #E8EAED;
 	background-color: #202124;
 	border-color: #5F6368;
 }
 
-textarea {
-	display: :block;
-	color: #E8EAED;
-}
+
 </style>
 
 
@@ -55,31 +52,31 @@ textarea {
 
 	<div class="form-group">
 	
-		<textarea class="form-control" rows="5" id="memo__content__form" name="content" required="required" placeholder="reminder 작성..."></textarea>
-		<button onclick="memoWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary">닫기</button>
+		<input type="text" class="form-control" rows="5" id="reminder__content__form" name="content" required="required" placeholder="reminder 작성..."/>
+		<button onclick="reminderWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary">닫기</button>
 	</div>
 </div>
 <br>
 <br>
 
 <!-- 메모 한 내용들을 뿌리기 -->
-<div id="memo__list" class="container">
+<div id="reminder__list" class="container">
 
-	<c:forEach var="memo" items="${memos}">
+	<c:forEach var="reminder" items="${reminders}"> 
 
-		<div id="memo-${memo.id}" class="form-group">
-			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}">
-			<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>
-			<c:if test="${memo.priority == 1}">
-				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer; color: red;">check</i>
-			</c:if>
-			<c:if test="${memo.priority == 0}">
-				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>
-			</c:if>
-			<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
+		<div id="reminder-" class="form-group">
+			<input type="text" class="form-control" id="reminder__content__list" value="">
+			
+ 			<c:if test="${reminder.priority == 1}"> 
+				<i onclick="" class="material-icons" id="reminderCheck" style="cursor: pointer; color: red;">check</i>
+ 			</c:if> 
+ 			<c:if test="${reminder.priority == 0}">
+				<i onclick="" class="material-icons" id="reminderCheck" style="cursor: pointer;">check</i>
+ 			</c:if> 
+			<button type="button" onclick="" class="btn btn-primary" id="closeList">닫기</button>
 			<!-- 수정도 가능하게 해야함 -->
 
-			<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
+			<i onclick="" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
 
 
 
@@ -103,7 +100,7 @@ textarea {
 
 
 
-<script src="/keep/js/memo.js"></script>
+<script src="/keep/js/reminder.js"></script>
 
 </body>
 </html>

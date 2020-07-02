@@ -194,7 +194,7 @@ html body {
 
 			<ul class="navbar-nav">
 				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="메모">lightbulb_outline</i></li>
-				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
+				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/reminder?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
 			</ul>
 
 

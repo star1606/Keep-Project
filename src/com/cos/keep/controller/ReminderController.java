@@ -14,10 +14,11 @@ import com.cos.keep.action.memo.MemoMainAction;
 import com.cos.keep.action.memo.MemoPriorityAction;
 import com.cos.keep.action.memo.MemoSearchAction;
 import com.cos.keep.action.memo.MemoUpdateAction;
-import com.cos.keep.action.memo.MemoWriteProcAction;
+import com.cos.keep.reminder.ReminderMainAction;
+import com.cos.keep.reminder.ReminderWriteProcAction;
 
-@WebServlet("/memo")
-public class MemoController extends HttpServlet {
+@WebServlet("/reminder")
+public class ReminderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String TAG = "MemoController : ";
 
@@ -35,11 +36,11 @@ public class MemoController extends HttpServlet {
 
 	private Action router(String cmd) {
 
-		if (cmd.equals("writeProc")) {
-			return new MemoWriteProcAction();
+		if (cmd.equals("main")) {
+			return new ReminderMainAction();
 
-		} else if (cmd.equals("delete")) {
-			return new MemoDeleteAction();
+		} else if (cmd.equals("writeProc")) {
+			return new ReminderWriteProcAction();
 
 		} else if (cmd.equals("update")) {
 			return new MemoUpdateAction();
@@ -57,7 +58,7 @@ public class MemoController extends HttpServlet {
 		return null;
 	}
 
-	public MemoController() {
+	public ReminderController() {
 		super();
 
 	}

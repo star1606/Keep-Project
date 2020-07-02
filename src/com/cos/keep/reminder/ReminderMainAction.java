@@ -1,4 +1,4 @@
-package com.cos.keep.action.memo;
+package com.cos.keep.reminder;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cos.keep.action.Action;
-import com.cos.keep.model.Memo;
 import com.cos.keep.model.Person;
-import com.cos.keep.repository.MemoRepository;
+import com.cos.keep.model.Reminder;
+import com.cos.keep.repository.ReminderRepository;
 
 
-public class MemoMainAction implements Action{
+public class ReminderMainAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -27,16 +27,15 @@ public class MemoMainAction implements Action{
 		  int personId = person.getId();
 		  
 		  
+		  ReminderRepository reminderRepository =
+				  ReminderRepository.getInstance();
 		  
-		  MemoRepository memoRepository =
-				  MemoRepository.getInstance();
-		  
-		  List<Memo> memos = memoRepository.findAll(personId);
-		  
-		  request.setAttribute("memos", memos);
+		  List<Reminder> reminders = reminderRepository.findAll(personId);
+		  System.out.println(reminders);
+		  request.setAttribute("reminders", reminders);
 		  
 		  RequestDispatcher dis =
-				  request.getRequestDispatcher("memo/main.jsp");
+				  request.getRequestDispatcher("memo/reminder.jsp");
 		  
 		  dis.forward(request, response);
 	}
