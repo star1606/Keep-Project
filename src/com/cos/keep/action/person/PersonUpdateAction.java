@@ -12,26 +12,30 @@ import javax.servlet.http.HttpSession;
 import com.cos.keep.action.Action;
 import com.cos.keep.util.Script;
 
-public class PersonUploadAction implements Action{
+public class PersonUpdateAction implements Action{
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		
 		// 1. 유효성 검사
-		HttpSession session = request.getSession();
-		if(session.getAttribute("principal") == null) {
-			Script.getMessage("잘못된 접근입니다.", response);
-			return; 
-		}
+				HttpSession session = request.getSession();
+				if(session.getAttribute("principal") == null) {
+					Script.getMessage("잘못된 접근입니다.", response);
+					return; 
+				}
+						
+
+			
+				
+				RequestDispatcher dis = 
+						request.getRequestDispatcher("person/update.jsp");
+				dis.forward(request, response);
 		
-		RequestDispatcher dis = 
-				request.getRequestDispatcher("person/profileUpload.jsp");
-		dis.forward(request, response);
 		
-	
+	}
 
 	
-	}
+	
 	
 }

@@ -83,8 +83,31 @@ public class PersonRepository {
 
 		return null;
 	}
+	
+	public int updateProfile(Person person) {
+		final String SQL = "UPDATE person SET personName =?, password=? WHERE id =?";
 
-	public int updateProfile(int id, String userProfile) {
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, person.getPersonName());
+			pstmt.setString(2, person.getPassword());
+			pstmt.setInt(3, person.getId());
+
+			return pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "updateProfile(int id, String personName, String password): " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+
+		return -1;
+	}
+	
+
+	public int uploadPicture(int id, String userProfile) {
 		final String SQL = "UPDATE person SET userProfile =? WHERE id =?";
 
 		try {
@@ -98,7 +121,7 @@ public class PersonRepository {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println(TAG + "update(int id, String userProfile): " + e.getMessage());
+			System.out.println(TAG + "uploadPicture(int id, String userProfile): " + e.getMessage());
 		} finally {
 			DBConn.close(conn, pstmt);
 		}

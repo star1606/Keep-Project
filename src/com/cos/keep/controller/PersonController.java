@@ -14,6 +14,8 @@ import com.cos.keep.action.person.PersonJoinProcAction;
 import com.cos.keep.action.person.PersonLoginAction;
 import com.cos.keep.action.person.PersonLoginProcAction;
 import com.cos.keep.action.person.PersonLogoutAction;
+import com.cos.keep.action.person.PersonUpdateAction;
+import com.cos.keep.action.person.PersonUpdateProcAction;
 import com.cos.keep.action.person.PersonUploadAction;
 import com.cos.keep.action.person.PersonUploadProcAction;
 
@@ -50,6 +52,10 @@ protected void doProcesss(HttpServletRequest request, HttpServletResponse respon
 					return new PersonUploadProcAction();	
 				} else if(cmd.equals("logout")) {
 					return new PersonLogoutAction();	
+				} else if(cmd.equals("update")) {
+					return new PersonUpdateAction();	
+				} else if(cmd.equals("updateProc")) {
+					return new PersonUpdateProcAction();	
 				}
 				
 				return null;

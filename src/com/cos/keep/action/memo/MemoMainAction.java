@@ -25,7 +25,9 @@ public class MemoMainAction implements Action{
 		  HttpSession session  = request.getSession();
 		  Person person = (Person)session.getAttribute("principal");
 		  int personId = person.getId();
-		
+		  System.out.println("이메일 받아오나?"+request.getParameter("email"));
+		  System.out.println("네임 받아오나?"+request.getParameter("personName"));
+		  
 		  
 		  MemoRepository memoRepository =
 				  MemoRepository.getInstance();

@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <title>Keep</title>
-</head>
 
 <style>
 .navbar {
@@ -69,22 +68,46 @@ html body {
 	border-color: #525355;
 }
 
+.dropdown-menu {
+	right: 0;
+	left: auto;
+	min-width: 104px;
+	background-color: #202124;
+	font: red;
+}
 
-
+.dropdown-item
+ {color: #919294;}
+ 
+ .btn-primary{background-color: #202124;
+    border-color: #202124;}
 
 </style>
 
+</head>
+
+
+
+
+
+
 <body>
+
+	
+		
+
+
 	<nav class="navbar navbar-expand-md bg-custom navbar-dark ">
 		<!-- Brand -->
-		<img src="/keep/static/image/icon.png" width="40px" height="40px" /> <a class="navbar-brand" href="/keep/memo?cmd=main" style="margin-left: 6px; margin-right: 96px; font-size: 22px; padding-left: 3px;">Keep</a>
+		<img src="/keep/static/image/icon.png" width="40px" height="40px" /> <a class="navbar-brand" href="/keep/memo?cmd=main"
+			style="margin-left: 6px; margin-right: 96px; font-size: 22px; padding-left: 3px;">Keep</a>
 
 		<!-- Toggler/collapsibe Button  검색버튼 -->
 
 		<c:if test="${not empty sessionScope.principal.id }">
 
 
-
+			
 
 
 			<div class="row">
@@ -94,7 +117,7 @@ html body {
 						<div class="input-group col-md-12">
 
 							<span class="input-group-btn">
-								<button class="btn btn-danger" type="submit" name="search">	
+								<button class="btn btn-danger" type="submit" name="search">
 									<span class="glyphicon glyphicon-search"></span>
 								</button>
 							</span> <input type="text" class="search-query form-control" name="keyword" placeholder="Search" />
@@ -150,21 +173,35 @@ html body {
 			</div>
 		</c:if>
 
-		<c:if test="${not empty sessionScope.principal.id}">
-			<!-- 			<ul class="navbar-nav"> -->
-			<!-- 				<li class="nav-item"> -->
-			<a class="nav-link " href="/keep/person?cmd=logout" style="text-decoration: none; color: #98989A;">로그아웃</a>
-			<!--</li>  -->
-			<!-- 			</ul> -->
-			<a class="navbar-brand" href="/keep/person?cmd=profileUpload"> <img style="border-radius: 15px" onerror="this.src='/keep/static/image/userProfile.png'"
-				src="${sessionScope.principal.userProfile }" width="30px" height="30px" />
-			</a>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</c:if>
-	</nav>
+			
+
+
+
+		<div class="container mt-3 justify-content-end" style="padding-right: 0px;">
+
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+
+					<img style="border-radius: 15px" onerror="this.src='/keep/static/image/userProfile.png'" src="${sessionScope.principal.userProfile }" width="30px" height="30px" />
+
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/keep/person?cmd=update">회원정보 수정</a>
+					<a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> 
+					<a class="dropdown-item" href="/keep/person?cmd=logout">로그아웃</a>
+				</div>
+			</div>
+		</div>
+		</nav>
+
+
+
+
+
+
+
+
 
 	<br />
 	<br />

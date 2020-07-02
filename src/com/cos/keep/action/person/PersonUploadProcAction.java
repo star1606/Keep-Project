@@ -49,7 +49,7 @@ public class PersonUploadProcAction implements Action{
 			
 			PersonRepository personRepository =
 					PersonRepository.getInstance();
-			int result = personRepository.updateProfile(id, userProfile);
+			int result = personRepository.uploadPicture(id, userProfile);
 			
 			if(result == 1) {
 				HttpSession session = request.getSession();

@@ -35,11 +35,13 @@
 
 <style>
 
-.wrap-input100, .input100 {
+.wrap-input100 {
 
-  height: 55px;
+	height: 50px;
 }
-
+input.input100 {
+    height: 48px;
+}
 
 </style>
 
@@ -51,40 +53,44 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form action="" class="login100-form validate-form" method="POST">
+				<form action="/keep/person?cmd=updateProc" class="login100-form validate-form" method="POST"
+					oninput='passConfirm.setCustomValidity(passConfirm.value != password.value ? "Passwords do not match." : "")'>
+					<input type="hidden" name = "id" value="${sessionScope.principal.id }"/>
 					<span class="login100-form-title p-b-33">
-						Account Join
+						회원정보 수정
 					</span>
 					
 					Email:
 					<div class="wrap-input100 validate-input " data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br>
-					Password:
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
+						<input class="input100" type="text" name="email" value = "${sessionScope.principal.email}" placeholder="" required="required" readonly="readonly">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div><br/>
-					Password: 확인
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" placeholder="">
-						<span class="focus-input100-1"></span>
-						<span class="focus-input100-2"></span>
-					</div><br/>
-					Name:
+					
+					이름 수정:
 					<div class="wrap-input100 validate-input" data-validate = "Valid name is required">
-						<input class="input100" type="text" name="personName" placeholder="">
+						<input class="input100" type="text" name="personName" value="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
-					</div>
+					</div><br/>
+					
+					Password 변경
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password" placeholder="">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div><br/>
+					Password 확인
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="passConfirm" placeholder="">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div><br/>
 					
 
 					<div class="container-login100-form-btn m-t-40">
 						<button class="login100-form-btn">
-							Sign up
+							회원정보 변경
 						</button>
 					</div>
 				
