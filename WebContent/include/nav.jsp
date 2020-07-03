@@ -21,12 +21,12 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-<!-- modal library -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <!-- modal library -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
 <title>Keep</title>
 
@@ -51,6 +51,16 @@ html body {
 .input-group md-form form-sm form-1 pl-0 {
 	width: 50%;
 }
+
+.search::placeholder {
+  
+  
+}
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: #ffffff;
+  }
+
 
 /* element.style { */
 /* 	width: 615px; */
@@ -104,20 +114,91 @@ html body {
 }
 
 .form-inline .input-group>.form-control {
-    width: 340%;
+	width: 340%;
 }
 
+<%--
+searchbar 시작 끝 --%> .container-1 {
+	width: 300px;
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+}
+
+.container-1 input#search {
+	width: 728px;
+    height: 46px;
+	background: #525355;
+	border: none;
+	font-size: 10pt;
+	float: left;
+	color: black;
+	padding-left: 45px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+	color:#eaeaeb;
+}
+
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+	color: #65737e;
+}
+
+.container-1 input#search::-moz-placeholder { /* Firefox 19+ */
+	color: #65737e;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+	color: #65737e;
+}
+
+.container-1 .icon {
+	position: absolute;
+	top: 50%;
+	margin-left: 15px;
+    margin-top: 12px;
+	z-index: 1;
+	color: #eaeaeb;
+}
+
+
+
+body {
+font-size: 17px;
+}
+
+
+
+
+<%--
+
+
+searchbar
+
+
+
+ 
+
+
+
+끝
+
+
+
+ 
+
+
+
+--%>
 </style>
 
 </head>
 
 
-
-
-
-
 <body>
-
 
 
 
@@ -140,13 +221,12 @@ html body {
 				<div id="custom-search-input">
 					<form class="form-inline" action="/keep/memo?cmd=search" method="post">
 						<div class="input-group col-md-12">
-
-							<span class="input-group-btn">
-								<button class="btn btn-danger" type="submit" name="search">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-							</span> <input type="text" class="search-query form-control" name="keyword" placeholder="Search" />
-
+							
+							<div class="box">
+								<div class="container-1">
+									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" placeholder="Search..." />
+								</div>
+							</div>
 						</div>
 					</form>
 				</div>

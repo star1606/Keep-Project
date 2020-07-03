@@ -16,7 +16,7 @@
 
 
 
-function memoCheck(id, priority){
+function reminderCheck(id, priority){
 
 // var data = {
 // "id" : id,
@@ -26,7 +26,7 @@ function memoCheck(id, priority){
 		console.log(priority);
 	$.ajax({
 		type : "get",
-		url : "/keep/memo?cmd=priority&id="+id+"&priority="+priority,
+		url : "/keep/reminder?cmd=priority&id="+id+"&priority="+priority,
 		contentType: "appliaction/json; charset=utf-8",
 		dataType : "json"
 		
@@ -36,27 +36,27 @@ function memoCheck(id, priority){
 		alert("우선순위 성공");
 		console.log(result);
 		
-		$("#memo__list").empty();
+		$("#reminder__list").empty();
 		
-		for (memo of result) {
-			var memoItem = `<div id="memo__list" class="container">`;
-			memoItem += `<div id="memo-${memo.id}" class="form-group">`;
-			memoItem += `<input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">`;
-			memoItem += `<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>`;
-			memoItem += `<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>`;
-			memoItem += `<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>`;
-			memoItem += `<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>`;
-			memoItem += `</div>`;
-			memoItem += `<br/>`;
-			memoItem += `<br/>`;
-			memoItem += `</div>`;
+		for (reminder of result) {
+			var  reminderItem =`<div id="reminder__list" class="container">
+								<div id="reminder-${reminder.id}" class="form-group">
+								<input type="text" class="form-control" id="reminder__content__list-${reminder.priority}" value="${reminder.content}">
+								<i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons"
+								  id="reminderCheck-${reminder.priority}" style="cursor: pointer;">assignment_turned_in</i>
+								<button type="button" onclick="reminderUpdate(${reminder.id})" class="btn btn-primary" id="closeList">닫기</button>
+								<i onclick="reminderDelete(${reminder.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
+								</div>
+								<br />
+								<br />
+								</div>`;
+
 			// return memoItem;
 			
-			$("#memo__list").append(memoItem);
+			$("#reminder__list").append(reminderItem);
 		}
-		// var memos = $("#memo-" + memoId);
-		// $("#memo__list").empty();
 		
+
 	}).fail(function(error) {
 		alert("우선순위 실패");
 	});
@@ -72,19 +72,18 @@ function memoCheck(id, priority){
 
 
 
-function memoUpdate(id) {
+function reminderUpdate(id) {
 	 
 	var data ={ 
 			id : id,
-			title : $("#memo__title__list").val(),
-			content : $("#memo__content__list").val()		
+			content : $("#reminder__content__list").val()		
 	};
 	
 	console.log(JSON.stringify(data));
 	
 	$.ajax({
 		type : "post",
-		url : "/keep/memo?cmd=update",
+		url : "/keep/reminder?cmd=update",
 		data : JSON.stringify(data),
 		contentType: "application/json; charset=utf-8",
 		dataType : "json"
@@ -93,42 +92,42 @@ function memoUpdate(id) {
 		
 		
 		
-		alert("메모 수정 성공");
+		alert("리마인더 수정 성공");
 		console.log(result);
-		renderMemoList(result);
+		renderReminderList(result);
 		
 	}).fail(function() {
-		alert("메모 수정 실패(function2)");
+		alert("리마인더 수정 실패(function2)");
 	});
 	
 }
 
 
 
-function memoDelete(memoId){
+function reminderDelete(reminderId){
 	
 
 	$.ajax({
 		type : "post",
-		url : "/keep/memo?cmd=delete",
-		data : "memoId=" + memoId,
+		url : "/keep/reminder?cmd=delete",
+		data : "reminderId=" + reminderId,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		dataType: "text"
 		
 	}).done(function(result) {
 		if(result == "1"){
-			alert("메모 삭제 성공");
-			var memoItem = $("#memo-" + memoId);
-			memoItem.remove();
+			alert("리마인더 삭제 성공");
+			var reminderItem = $("#reminder-" + reminderId);
+			reminderItem.remove();
 			
 		} else {
 		
-			alert("메모 삭제 실패");
+			alert("리마인더 삭제 실패");
 		}
 		
 		
 	}).fail(function(error) {
-		alert("메모 삭제 실패");
+		alert("리마인더 삭제 실패");
 	});
 	
 	
@@ -173,7 +172,7 @@ function reminderWrite(personId) {
 }
 
 
-function renderMemoList(reminders) {
+function renderReminderList(reminders) {
 	for(var reminder of reminders){
 		$("#reminder__list").append(makeReminderItem(reminder));
 	}
@@ -182,19 +181,20 @@ function renderMemoList(reminders) {
 
 
 
-function makeMemoItem(memo) {
-	var memoItem = `<div id="memo__list" class="container">`;
-		memoItem += `<div id="memo-${memo.id}" class="form-group">`;
-		memoItem += `<input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">`;
-		memoItem += `<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>`;
-		memoItem += `<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>`;
-		memoItem += `<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>`;
-		memoItem += `<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>`;
-		memoItem += `</div>`;
-		memoItem += `<br/>`;
-		memoItem += `<br/>`;
-		memoItem += `</div>`;
-		return memoItem;
+function makeReminderItem(reminder) {
+	var reminderItem = `<div id="reminder__list" class="container">
+						<div id="reminder-${reminder.id}" class="form-group">
+						<input type="text" class="form-control" id="reminder__content__list-${reminder.priority}" value="${reminder.content}">
+					    <i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons"
+						  id="reminderCheck-${reminder.priority}" style="cursor: pointer;">assignment_turned_in</i>
+						<button type="button" onclick="reminderUpdate(${reminder.id})" class="btn btn-primary" id="closeList">닫기</button>
+						<i onclick="reminderDelete(${reminder.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
+						</div>
+						<br />
+						<br />
+						</div>`;
+	
+		return reminderItem;
 		
 		
 }

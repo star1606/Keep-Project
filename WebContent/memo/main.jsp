@@ -8,6 +8,10 @@
 
 
 <style>
+#memo__list {
+	padding-left: 0px;
+}
+
 div {
 	display: :inline-block;
 	position: relative;
@@ -19,7 +23,12 @@ div {
 	right: 10px;
 	background-color: #202124;
 	border-color: #202124;
-	color: #5F6368;
+	color: #E8EAED;
+}
+
+#closeList {
+	display: none;
+	color: #202124;
 }
 
 #delList {
@@ -27,9 +36,24 @@ div {
 	bottom: 10px;
 	left: 10px;
 	color: #BEBFBF;
+	display: none;
+}
+
+#memoCheck-1 {
+	position: absolute;
+	color: #red;
+	top: 6px;
+	right: 16px;
 }
 
 #memoCheck {
+	position: absolute;
+	color: #BEBFBF;
+	top: 6px;
+	right: 16px;
+}
+
+#memoCheck-0 {
 	position: absolute;
 	color: #BEBFBF;
 	top: 6px;
@@ -46,12 +70,27 @@ textarea {
 	display: :block;
 	color: #E8EAED;
 }
+
+.form-control:focus {
+	box-shadow: none;
+}
+
+/* .container:hover #delList, #closeList { */
+/*    display: block; */
+/* }  */
+.form-group:hover #delList, #closeList {
+	display: block;
+}
+
+.form-group:hover #closeList {
+	color: #E8EAED;
+}
 </style>
 
 
 
 <!-- 메모하기 -->
-<div class="container">
+<div class="container"  style="padding-left: 0px;">
 
 	<div class="form-group">
 
@@ -68,21 +107,24 @@ textarea {
 <div id="memo__list" class="container">
 
 	<c:forEach var="memo" items="${memos}">
-
 		<div id="memo-${memo.id}" class="form-group">
-			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}">
+			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}" name="">
 			<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="">${memo.content}</textarea>
-			<c:if test="${memo.priority == 1}">
-				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer; color: red;">check</i>
-			</c:if>
-			<c:if test="${memo.priority == 0}">
-				<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>
-			</c:if>
-			<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
-			<!-- 수정도 가능하게 해야함 -->
 
+			<c:choose>
+
+
+				<c:when test="${memo.priority == 1 }">
+					<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck-${memo.priority }" style="cursor: pointer; color: red;">check</i>
+				</c:when>
+
+				<c:otherwise>
+					<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck-${memo.priority }" style="cursor: pointer;">check</i>
+				</c:otherwise>
+
+			</c:choose>
+			<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">수정</button>
 			<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
-
 
 
 		</div>
@@ -99,8 +141,14 @@ textarea {
 
 
 
-
-
+<script>
+// $("#memo__list").hover(
+// 		function(){
+// 			$("deList").hide();
+// 			$("closeList").hide();
+// });
+// $(".form-group").mouseleave(function(){$(this).css("background", "red");}
+</script>
 
 
 

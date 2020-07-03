@@ -18,7 +18,7 @@ public class ReminderRepository {
 	
 	public ReminderRepository() {}
 		
-		private static final String TAG = "MemoRepository: ";
+		private static final String TAG = "ReminderRepository: ";
 	
 		public static ReminderRepository getInstance() {
 			return instance;
@@ -35,7 +35,7 @@ public class ReminderRepository {
 		
 		
 		public int priorityUpdate(int id, int changeNum) {
-			final String SQL = "UPDATE memo SET priority = ? WHERE id =?";
+			final String SQL = "UPDATE reminder SET priority = ? WHERE id =?";
 			
 			try {
 				conn = DBConn.getConnection();
@@ -64,8 +64,8 @@ public class ReminderRepository {
 		
 		
 		
-		public int update(Memo memo) {
-			final String SQL = "UPDATE memo SET title =?, content =? WHERE id =?";
+		public int update(Reminder reminder) {
+			final String SQL = "UPDATE reminder SET content =? WHERE id =?";
 			
 			try {
 				conn = DBConn.getConnection();
@@ -73,9 +73,8 @@ public class ReminderRepository {
 				
 				//물음표 채우기
 			
-				pstmt.setString(1, memo.getTitle());
-				pstmt.setString(2, memo.getContent());
-				pstmt.setInt(3, memo.getId());
+				pstmt.setString(1, reminder.getContent());
+				pstmt.setInt(2, reminder.getId());
 				
 				
 				return pstmt.executeUpdate();
@@ -84,7 +83,7 @@ public class ReminderRepository {
 								 	
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println(TAG + "update(Memo memo)" + e.getMessage());
+				System.out.println(TAG + "update(Reminder reminder): " + e.getMessage());
 			
 			} finally {
 				DBConn.close(conn, pstmt);
@@ -141,7 +140,7 @@ public class ReminderRepository {
 		
 		
 		public int deleteById(int id){ 
-			final String SQL = "DELETE FROM memo WHERE id =?";
+			final String SQL = "DELETE FROM reminder WHERE id =?";
 			
 		
 			
@@ -160,7 +159,7 @@ public class ReminderRepository {
 				
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println(TAG + "MemoDelete(int id)" + e.getMessage());
+				System.out.println(TAG + "deleteById(int id)" + e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt, rs);
 			}
@@ -272,7 +271,7 @@ public class ReminderRepository {
 			sb.append("SELECT id, personId, content, priority, createDate ");					
 			sb.append("FROM reminder "); 
 			sb.append("WHERE personId = ? ");
-			sb.append("ORDER by priority desc, id desc");
+			sb.append("ORDER by priority asc, id desc");
 		
 			System.out.println(sb.toString());	
 			final String SQL = sb.toString();	

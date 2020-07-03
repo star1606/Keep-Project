@@ -14,13 +14,16 @@ import com.cos.keep.action.memo.MemoMainAction;
 import com.cos.keep.action.memo.MemoPriorityAction;
 import com.cos.keep.action.memo.MemoSearchAction;
 import com.cos.keep.action.memo.MemoUpdateAction;
+import com.cos.keep.action.reminder.ReminderDeleteAction;
+import com.cos.keep.action.reminder.ReminderPriorityAction;
+import com.cos.keep.action.reminder.ReminderUpdateAction;
 import com.cos.keep.reminder.ReminderMainAction;
 import com.cos.keep.reminder.ReminderWriteProcAction;
 
 @WebServlet("/reminder")
 public class ReminderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String TAG = "MemoController : ";
+	private static final String TAG = "ReminderController : ";
 
 	protected void doProcesss(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -43,13 +46,13 @@ public class ReminderController extends HttpServlet {
 			return new ReminderWriteProcAction();
 
 		} else if (cmd.equals("update")) {
-			return new MemoUpdateAction();
+			return new ReminderUpdateAction();
 
-		} else if (cmd.equals("main")) {
-			return new MemoMainAction();
+		} else if (cmd.equals("delete")) {
+			return new ReminderDeleteAction();
 
 		} else if (cmd.equals("priority")) {
-			return new MemoPriorityAction();
+			return new ReminderPriorityAction();
 
 		} else if (cmd.equals("search")) {
 			return new MemoSearchAction();
