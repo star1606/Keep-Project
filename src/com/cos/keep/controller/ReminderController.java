@@ -16,6 +16,7 @@ import com.cos.keep.action.memo.MemoSearchAction;
 import com.cos.keep.action.memo.MemoUpdateAction;
 import com.cos.keep.action.reminder.ReminderDeleteAction;
 import com.cos.keep.action.reminder.ReminderPriorityAction;
+import com.cos.keep.action.reminder.ReminderSearchAction;
 import com.cos.keep.action.reminder.ReminderUpdateAction;
 import com.cos.keep.reminder.ReminderMainAction;
 import com.cos.keep.reminder.ReminderWriteProcAction;
@@ -55,7 +56,7 @@ public class ReminderController extends HttpServlet {
 			return new ReminderPriorityAction();
 
 		} else if (cmd.equals("search")) {
-			return new MemoSearchAction();
+			return new ReminderSearchAction();
 		}  
 
 		return null;

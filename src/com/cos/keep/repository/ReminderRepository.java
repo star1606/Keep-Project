@@ -208,37 +208,36 @@ public class ReminderRepository {
 		
 		
 		
-		public List<Memo> findSearch(int personId, String keyword){ 
+		public List<Reminder> findSearch(int personId, String keyword){ 
 			
 			
-			final String SQL = "SELECT id, personId, title, content, priority, createDate FROM memo " + 
-					"WHERE personId =? AND (to_char(content) like ? or title like ?)";
+			final String SQL = "SELECT id, personId, content, priority, createDate FROM reminder " + 
+					"WHERE personId =? AND (content like ?)";
 		
 			try {
-				List<Memo> memos = new ArrayList<>();
+				List<Reminder> reminders = new ArrayList<>();
 				conn = DBConn.getConnection();
 				pstmt = conn.prepareStatement(SQL);
 				
 				pstmt.setInt(1, personId);
 				pstmt.setString(2, "%"+ keyword +"%");
-				pstmt.setString(3, "%"+ keyword +"%");
+			
 				
 				rs = pstmt.executeQuery();
 				 
 				while (rs.next()) {
-					Memo memo = new Memo(
+					Reminder reminder = new Reminder(
 							rs.getInt("id"),
 							rs.getInt("personId"),
-							rs.getString("title"),
 							rs.getString("content"),
 							rs.getInt("priority"),
 							rs.getTimestamp("createDate")
 							
 					
 					);
-					memos.add(memo);
+					reminders.add(reminder);
 				}
-					return memos;
+					return reminders;
 				
 				
 				
