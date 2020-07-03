@@ -10,6 +10,7 @@
 <style>
 #memo__list {
 	padding-left: 0px;
+	width: 613px;
 }
 
 div {
@@ -89,10 +90,12 @@ textarea {
 
 
 
-<!-- 메모하기 -->
-<div class="container"  style="padding-left: 0px;">
 
-	<div class="form-group">
+
+<!-- 메모하기 -->
+<div class="container"  style="padding-left: 0px; width: 613px;">
+
+	<div class="form-group" >
 
 		<input type="text" class="form-control" id="memo__title__form" name="title" placeholder="제목">
 		<textarea class="form-control" rows="5" id="memo__content__form" name="content" required="required" placeholder="메모 작성..."></textarea>
@@ -103,7 +106,7 @@ textarea {
 <br>
 <br>
 
-<!-- 메모 한 내용들을 뿌리기 -->
+<!-- 메모 한 내용들을 뿌리기 --> 	
 <div id="memo__list" class="container">
 
 	<c:forEach var="memo" items="${memos}">

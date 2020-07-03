@@ -11,6 +11,7 @@
 
 #reminder__list{
 padding-left: 0px;
+width: 616px;
 }
 
 div {
@@ -114,7 +115,7 @@ div {
 
 
 <!-- 메모하기 -->
-<div class="container" style="padding-left: 0px;">
+<div class="container" style="padding-left: 0px; width: 613px;">
 
 	<div class="form-group">
 
