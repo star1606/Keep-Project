@@ -26,7 +26,7 @@ public class PersonRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	public int findByEmail(String email) {
+	public int checkEmail(String email) {
 
 		final String SQL = "SELECT count(*) FROM person WHERE email = ?";
 
@@ -44,14 +44,49 @@ public class PersonRepository {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println(TAG + "findByEmail(String email)" + e.getMessage());
+			System.out.println(TAG + "checkEmail(String email)" + e.getMessage());
 		} finally {
 			DBConn.close(conn, pstmt, rs);
 		}
 
 		return -1;
 	}
+	
+	public Person findByEmail(String email) {
+		final String SQL = "SELECT * FROM person WHERE email = ?";
+		Person person = null;
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			// 물음표 완성하기
+			pstmt.setString(1, email);
+			// if 돌려서 rs -> java오브젝트에 집어넣기
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				person = new Person();
+				person.setId(rs.getInt("id"));
+				person.setEmail(rs.getString("email"));
+				person.setPersonName(rs.getString("personName"));
+				person.setPassword(rs.getString("password"));
+				person.setUserProfile(rs.getString("userProfile"));
+				person.setCreateDate(rs.getTimestamp("createDate"));
+				
+				return person;
+			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG+"findByUsername : "+e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+
+		return null;
+	}
+
+	
+	
 	// 매개변수 하나만 받을거라서 그냥 int 변수형으로
 	public Person findById(int id) {
 

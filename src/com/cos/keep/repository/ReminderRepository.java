@@ -270,7 +270,7 @@ public class ReminderRepository {
 			sb.append("SELECT id, personId, content, priority, createDate ");					
 			sb.append("FROM reminder "); 
 			sb.append("WHERE personId = ? ");
-			sb.append("ORDER by priority asc, id desc");
+			sb.append("ORDER by priority desc, id desc");
 		
 			System.out.println(sb.toString());	
 			final String SQL = sb.toString();	

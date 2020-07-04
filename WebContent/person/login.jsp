@@ -33,10 +33,8 @@
 </head>
 <body>
 
-<style>
 	
 
-</style>
 
 	 <!-- 버튼 눌렀을 때 데이터값 일치하면 로그인되서 main으로 넘어가고 아니면 안됨 -->
 	<div class="limiter">
@@ -71,7 +69,7 @@
 						
 						
 					<div class="container-login100-form-btn m-t-20 justify-content-center">
-						<a href="https://kauth.kakao.com/oauth/authorize?client_id=69df22722bf186a619e27a21cba0f9fa&redirect_uri=http://localhost:8000/blog/oauth/kakao?cmd=callback&response_type=code">
+						<a href="https://kauth.kakao.com/oauth/authorize?client_id=69df22722bf186a619e27a21cba0f9fa&redirect_uri=http://localhost:8000/keep/oauth/kakao?cmd=callback&response_type=code">
 						<img width="390px" height="60px" src="/keep/static/image/kakao_login_medium_wide.png"></img></a>								
 					</div>
 	

@@ -9,17 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.keep.action.Action;
-import com.cos.keep.action.memo.MemoDeleteAction;
-import com.cos.keep.action.memo.MemoMainAction;
-import com.cos.keep.action.memo.MemoPriorityAction;
-import com.cos.keep.action.memo.MemoSearchAction;
-import com.cos.keep.action.memo.MemoUpdateAction;
 import com.cos.keep.action.reminder.ReminderDeleteAction;
+import com.cos.keep.action.reminder.ReminderMainAction;
 import com.cos.keep.action.reminder.ReminderPriorityAction;
 import com.cos.keep.action.reminder.ReminderSearchAction;
 import com.cos.keep.action.reminder.ReminderUpdateAction;
-import com.cos.keep.reminder.ReminderMainAction;
-import com.cos.keep.reminder.ReminderWriteProcAction;
+import com.cos.keep.action.reminder.ReminderWriteProcAction;
 
 @WebServlet("/reminder")
 public class ReminderController extends HttpServlet {

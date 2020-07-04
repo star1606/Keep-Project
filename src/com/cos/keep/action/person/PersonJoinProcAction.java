@@ -2,6 +2,7 @@ package com.cos.keep.action.person;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,7 +59,7 @@ public class PersonJoinProcAction implements Action{
 				PersonRepository.getInstance();
 		
 		
-	int checkResult = personRepository.findByEmail(email);
+	int checkResult = personRepository.checkEmail(email);
 	System.out.println(checkResult);
 		
 		if(checkResult >= 1) {
