@@ -46,7 +46,7 @@ public class ReminderSearchAction implements Action {
 		
 		request.setAttribute("reminders", reminders);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("/memo/reminder.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("/memo/todolist2.jsp");
 
 		dis.forward(request, response);
 	}

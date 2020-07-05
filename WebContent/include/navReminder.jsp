@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
 <!-- <!-- modal library -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
@@ -186,7 +186,7 @@ font-size: 17px;
 	<nav class="navbar navbar-expand-md bg-custom navbar-dark ">
 		<!-- Brand -->
 		<img src="/keep/static/image/icon.png" width="40px" height="40px" /> <a class="navbar-brand" href="/keep/memo?cmd=main"
-			style="margin-left: 6px; margin-right: 96px; font-size: 22px; padding-left: 3px;">Keep</a>
+			style="margin-left: 6px; margin-right: 96px; font-size: 22px; padding-left: 3px; ">Keep</a>
 
 		<!-- Toggler/collapsibe Button  검색버튼 -->
 
@@ -204,7 +204,7 @@ font-size: 17px;
 							
 							<div class="box">
 								<div class="container-1">
-									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" placeholder="Search..." />
+									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" style="font-family: 'Noto Sans KR', sans-serif;" placeholder="Search..." />
 								</div>
 							</div>
 						</div>
@@ -236,11 +236,9 @@ font-size: 17px;
 
 				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/keep/person?cmd=update">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
-						href="/keep/person?cmd=logout">로그아웃</a>
+					<a class="dropdown-item" href="/keep/person?cmd=update" style="font-family: 'Noto Sans KR', sans-serif;">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a>
+					 <a class="dropdown-item" href="/keep/person?cmd=logout" style="font-family: 'Noto Sans KR', sans-serif;">로그아웃</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<br />
-	<br />

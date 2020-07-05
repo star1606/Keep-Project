@@ -5,15 +5,49 @@
 
 <%@ include file="../include/navReminder.jsp"%>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
 <!--  아이콘 색깔 #BEBFBF -->
 <!-- <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'> -->
 <!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script> -->
- <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'> 
- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> 
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
-<style> body {
+<style>
+ul {
+	display: inline-block;
+	position: relative;
+
+} 
+
+#create{ 
+
+position: absolute;
+right: 5px;
+
+}
+
+#delList{ 
+
+position: absolute;
+right: 30px;
+
+
+}
+
+.form-check {
+ 
+    display: inline-block;
+  
+}
+
+li
+{
+text-align: center;
+}
+
+
+body {
      background-color: #f9f9fa
  }
 
@@ -74,7 +108,10 @@
 
  .card-body {
      flex: 1 1 auto;
-     padding: 1.25rem
+     padding: 1.25rem;
+     
+    margin-bottom: 13px;
+     
  }
 
  .card .card-title {
@@ -466,91 +503,142 @@
  .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
      display: flex !important
  }
- </style>
+
+
+.card .card-title {
+  
+    font-size: 1.875rem;
+    font-family: 'Noto Sans KR', sans-serif;
+  
+}
+
+
+.form-check .form-check-label {
+   
+    margin-left: 1.75rem;
+    font-size: 1.8rem;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+.form-control {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    color: black;
+}
+}
+
+.btn {
+    font-size: 1.5rem;
+   
+    
+}
+
+.card .card-title {
+text-align: center;
+    font-size: 4rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.list-wrapper ul li:first-child {
+    border-bottom: 1px solid #8d8d8d;
+}
+
+hr {
+    margin-bottom: 8px;
+    border-color: #8d8d8d;
+}
+
+#delList {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: none;
+}
+
+/* #reminderCheck-1, #reminderCheck-0{ */
+/* 	position: absolute; */
+/* 	left : 0px; */
+	
+/* } */
+
+#reminderCheck-1, #reminderCheck-0{
+ margin-top: 4px;
+ }
+
+ul:hover #delList{
+	display: block;
+}
+
+
+</style>
 
 </head>
 
-<!-- 메모하기 -->
-<div class="page-content page-container" id="page-content">
-    <div class="padding">
-        <div class="row container d-flex justify-content-center">
-            <div class="col-lg-12">
-                <div class="card px-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Awesome Todo list</h4>
-                        <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"> <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> </div>
-                        <div class="list-wrapper">
-                            <ul class="d-flex flex-column-reverse todo-list">
-                                <li>
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> For what reason would it be advisable. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                                <li class="completed">
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked=""> For what reason would it be advisable for me to think. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                                <li>
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> it be advisable for me to think about business content? <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                                <li>
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Print Statements all <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                                <li class="completed">
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox" checked=""> Call Rampbo <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                                <li>
-                                    <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Print bills <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<body>
+	<!-- 메모하기 -->
+	<div class="page-content page-container" id="page-content">
+		<div class="padding">
+			<div class="row container d-flex justify-content-center" style="margin: auto">
+				<div class="col-lg-8">
+					<div class="card px-4">
+						<div class="card-body">
+							<h4 class="card-title">Todo list</h4>
+							<br><br>
+							
+							<div class="add-items d-flex" >
+								
+								<input type="text" class="form-control todo-list-input" placeholder="Todolist 입력" style="color: black;">
+								<button onclick="reminderWrite(${sessionScope.principal.id})" class="add btn btn-primary font-weight-bold todo-list-add-btn" style="font-family: 'Noto Sans KR', sans-serif;">추가</button>
+							</div>
+							<br>
+							
+							<div class="list-wrapper">
+								<hr>
+								<c:forEach var="reminder" items="${reminders}">
+									
+									<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
+										<c:choose>
+											<c:when test="${reminder.priority == 1 }">
+												<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
+													<div class="form-check" id="reminderList">
+														
+														<label class="form-check-label" id="reminder__content__list-${reminder.priority}"> ${reminder.content }</label>
+													</div>
+													
+													<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
+												</li>
+											</c:when>
+											<c:otherwise>
+												<li>
+												<i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer;">check_box_outline_blank</i>
+												<div class="form-check" id="reminderList">
+													  <label class="form-check-label" id="reminder__content__list-${reminder.priority}"> ${reminder.content }</label>													
+													 
+												</div>
+												
+												<i onclick="reminderDelete(${reminder.id})" class="material-icons" id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
+												</li>
+
+											</c:otherwise>
+
+
+										</c:choose>
+									</ul>
+
+
+								</c:forEach>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
 
-<script>
-	(function($) {
-	'use strict';
-	$(function() {
-	var todoListItem = $('.todo-list');
-	var todoListInput = $('.todo-list-input');
-	$('.todo-list-add-btn').on("click", function(event) {
-	event.preventDefault();
-	
-	var item = $(this).prevAll('.todo-list-input').val();
-	
-	if (item) {
-	todoListItem.append("<li><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox' />" + item + "<i class='input-helper'></i></label></div><i class='remove mdi mdi-close-circle-outline'></i></li>");
-	todoListInput.val("");
-	}
-	
-	});
-	
-	todoListItem.on('change', '.checkbox', function() {
-	if ($(this).attr('checked')) {
-	$(this).removeAttr('checked');
-	} else {
-	$(this).attr('checked', 'checked');
-	}
-	
-	$(this).closest("li").toggleClass('completed');
-	
-	});
-	
-	todoListItem.on('click', '.remove', function() {
-	$(this).parent().remove();
-	});
-	
-	});
-	})(jQuery);
-
-</script>
-
-
-<script src="/keep/js/reminder.js"></script>
+	<script src="/keep/js/todolist.js"></script>
 
 </body>
 </html>

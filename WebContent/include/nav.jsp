@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
 <!-- <!-- modal library -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
@@ -224,7 +224,7 @@ searchbar
 							
 							<div class="box">
 								<div class="container-1">
-									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" placeholder="Search..." />
+									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" placeholder="Search..." style="font-family: 'Noto Sans KR', sans-serif;" />
 								</div>
 							</div>
 						</div>
@@ -232,32 +232,7 @@ searchbar
 				</div>
 			</div>
 
-			<!-- 			<div class="input-group md-form form-sm form-1 pl-0" -->
-			<!-- 				style="height: 38px; width: 615px;"> -->
-			<!-- 				<div class="input-group-prepend"> -->
-
-			<!--  					<div class="col-lg-12 text-center mt-5"> -->
-
-			<!-- </div> -->
-			<!-- <div class="col-md-4 offset-md-4 mt-5 border border-success pt-3"> -->
-			<!-- <div class="input-group mb-3"> -->
-			<!--   <span class="input-group-text"><i class="fa fa-search"></i></span> -->
-
-			<!--   <input type="text" class="form-control" placeholder="Search ......" aria-label="Recipient's username">  -->
-			<!--   <div class="input-group-append"> -->
-
-			<!--   </div> -->
-			<!--   </div> -->
-			<!-- </div> -->
-
-			<!-- 				</div> -->
-			<!-- 				 <i class="material-icons" style="color: red;">search</i> -->
-			<!-- 				<input class="form-control my-0 py-1" type="text" -->
-			<!-- 					placeholder="Search" aria-label="Search"> -->
-
-			<!-- 			</div> -->
-
-
+			
 
 
 
@@ -285,8 +260,8 @@ searchbar
 
 				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/keep/person?cmd=update">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
-						href="/keep/person?cmd=logout">로그아웃</a>
+					<a class="dropdown-item" href="/keep/person?cmd=update" style="font-family: 'Noto Sans KR', sans-serif;">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
+						href="/keep/person?cmd=logout" style="font-family: 'Noto Sans KR', sans-serif;">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -294,11 +269,3 @@ searchbar
 
 
 
-
-
-
-
-
-
-	<br />
-	<br />

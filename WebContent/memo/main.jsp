@@ -3,7 +3,7 @@
 
 <%@ include file="../include/nav.jsp"%>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
 <!--  아이콘 색깔 #BEBFBF -->
 
 
@@ -70,6 +70,7 @@ div {
 textarea {
 	display: :block;
 	color: #E8EAED;
+	
 }
 
 .form-control:focus {
@@ -86,6 +87,8 @@ textarea {
 .form-group:hover #closeList {
 	color: #E8EAED;
 }
+
+
 </style>
 
 
@@ -97,10 +100,10 @@ textarea {
 
 	<div class="form-group" >
 
-		<input type="text" class="form-control" id="memo__title__form" name="title" placeholder="제목">
-		<textarea class="form-control" rows="5" id="memo__content__form" name="content" required="required" placeholder="메모 작성..."></textarea>
+		<input type="text" class="form-control" id="memo__title__form" name="title" placeholder="제목" style="font-family: 'Noto Sans KR', sans-serif;">
+		<textarea class="form-control" rows="5" id="memo__content__form" name="content" required="required"  placeholder="메모 작성..." style="font-family: 'Noto Sans KR', sans-serif;"></textarea>
 
-		<button onclick="memoWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary">닫기</button>
+		<button onclick="memoWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary" style="font-family: 'Noto Sans KR', sans-serif;">추가</button>
 	</div>
 </div>
 <br>
@@ -111,8 +114,8 @@ textarea {
 
 	<c:forEach var="memo" items="${memos}">
 		<div id="memo-${memo.id}" class="form-group">
-			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}" name="">
-			<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="">${memo.content}</textarea>
+			<input type="text" class="form-control" id="memo__title__list" value="${memo.title}" style="font-family: 'Noto Sans KR', sans-serif;" name="">
+			<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="" style="font-family: 'Noto Sans KR', sans-serif;">${memo.content}</textarea>
 
 			<c:choose>
 
@@ -137,7 +140,7 @@ textarea {
 	</c:forEach>
 
 </div>
-
+	
 
 
 

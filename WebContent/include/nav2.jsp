@@ -80,8 +80,28 @@ html body {
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
  
+.btn-primary {
+	background-color: #202124;
+	border-color: #202124;
+}
 
+.btn-danger {
+	color: #fff;
+	background-color: #525355;
+	border-color: #525355;
+}
 
+.dropdown-menu {
+	right: 0;
+	left: auto;
+	min-width: 104px;
+	background-color: #202124;
+	font: red;
+}
+
+.dropdown-item {
+	color: #919294;
+}
 
 .btn-danger {
 	color: #fff;
@@ -95,11 +115,11 @@ html body {
 		<!-- Brand -->
 		<img src="/keep/static/image/icon.png" width="40px" height="40px" />
 		<a class="navbar-brand" href="/keep/memo?cmd=main"
-			style="margin-left: 8px; margin-right: 96px;">Keep</a>
+			style="margin-left: 8px; margin-right: 96px; font-size: 23px;" >Keep</a>
 
 		<!-- Toggler/collapsibe Button  검색버튼 -->
 
-		<c:if test="${not empty sessionScope.principal.id }">
+		
 
 
 
@@ -136,46 +156,26 @@ html body {
 
 
 			<!-- Navbar links navbar 창 -->
-			<div class="collapse navbar-collapse justify-content-end"
-				id="collapsibleNavbar">
+			<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar"></div>
 
-				<ul class="navbar-nav">
+				<div class="container mt-3 justify-content-end" style="padding-right: 0px;">
+
+			<ul class="navbar-nav">
+				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/memo?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="메모">lightbulb_outline</i></li>
+				<li class="nav-item "><i onclick="location.href='http://localhost:8000/keep/reminder?cmd=main'" class="material-icons" style="cursor: pointer; color: #98989A;" id="" title="리마인더">notifications_none</i></li>
+			</ul>
 
 
-					<li class="nav-item "><i
-						onclick="location.href='http://localhost:8000/keep/memo?cmd=main'"
-						class="material-icons" style="cursor: pointer; color: #98989A;" title="메모">lightbulb_outline</i></li>
-					<li class="nav-item "><i
-						onclick="location.href='http://localhost:8000/keep/memo?cmd=main'"
-						class="material-icons" style="cursor: pointer color: ; color: #98989A;" title="리마인더">notifications_none</i></li>
-					<!-- 					<li class="nav-item "><a class="nav-link " -->
-					<!-- 						href="/keep/memo?cmd=main">메모</a></li> -->
-					<!-- 					<li class="nav-item" style="padding-right: 60px;"><a -->
-					<!-- 						class="nav-link" href="/keep/memo/reminder.jsp">리마인더</a></li> -->
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle margin-left" data-toggle="dropdown">
 
-				</ul>
+					<img style="border-radius: 15px" onerror="this.src='/keep/static/image/userProfile.png'" src="${sessionScope.principal.userProfile }" width="30px" height="30px" />
+
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/keep/person?cmd=update" style="font-family: 'Noto Sans KR', sans-serif;">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
+						href="/keep/person?cmd=logout" style="font-family: 'Noto Sans KR', sans-serif;">로그아웃</a>
+				</div>
 			</div>
-		</c:if>
-
-		<c:if test="${not empty sessionScope.principal.id}">
-<!-- 			<ul class="navbar-nav"> -->
-<!-- 				<li class="nav-item"> -->
-				<a class="nav-link " href="/keep/person?cmd=logout" style="text-decoration:none; color: #98989A;">로그아웃</a>
-				<!--</li>  -->
-<!-- 			</ul> -->
-			<a class="navbar-brand" href="/keep/person?cmd=profileUpload"> <img
-				style="border-radius: 15px"
-				onerror="this.src='/keep/static/image/userProfile.png'"
-				src="${sessionScope.principal.userProfile }" width="30px"
-				height="30px" />
-			</a>
-			
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</c:if>
+		</div>
 	</nav>
-
-	<br />
-	<br />
