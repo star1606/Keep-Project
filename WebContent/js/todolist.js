@@ -36,29 +36,21 @@ function reminderCheck(id, priority){
 		alert("우선순위 성공");
 		console.log(result);
 		
-		$("#reminder__list").empty();
+		$("#reminder-"+"${reminder.id}").empty();
 		
 		for (reminder of result) {
-			var  reminderItem =`<div id="reminder-${reminder.id}" class="list-wrapper">
-								<ul class="d-flex flex-column-reverse todo-list">
-									<li>
-										<div class="form-check">
-											<label class="form-check-label"> 
-												<i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons">check_box</i> 
-												<input type="text" class="form-control" id="reminder__content__list-${reminder.priority}" value="${reminder.content}">
-											</label>
-										</div> 
-										<i onclick="reminderUpdate(${reminder.id})" class="material-icons" id="closeList" style="cursor: pointer; font-size: 20px;">create</i> 
-										<i onclick="reminderDelete(${reminder.id})" class="material-icons" id="delList" style="cursor: pointer; font-size: 20px;">delete</i> <!-- 나중에 엡솔루트로 위치지정 -->
-									</li>
-	
-	
-								</ul>
-							</div>`;
+			var  reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
+								<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
+								<div class="form-check" id="reminderList">
+								<label class="form-check-label" id="reminder__content__list-${reminder.priority}" style="text-decoration; text-decoration-color: #8d8d8d;"> ${reminder.content }</label>
+								</div>
+								<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
+								</li>
+								</ul>`;
 
 			// return memoItem;
 			
-			$("#reminder__list").append(reminderItem);
+			$("#reminder-"+"${reminder.id}").append(reminderItem);
 		}
 		
 
@@ -161,7 +153,7 @@ function reminderWrite(personId) {
 				alert("리마인더 작성 실패");
 			} else {
 				alert("리마인더 작성 성공");
-				$("#reminder__list").empty();
+				$("#reminder-'${reminder.id}'").empty();
 				console.log(result);
 				
 			
@@ -179,7 +171,7 @@ function reminderWrite(personId) {
 
 function renderReminderList(reminders) {
 	for(var reminder of reminders){
-		$("#reminder__list").append(makeReminderItem(reminder));
+		$("#reminder-"+"${reminder.id}").append(makeReminderItem(reminder));
 	}
 }
 
@@ -187,22 +179,14 @@ function renderReminderList(reminders) {
 
 
 function makeReminderItem(reminder) {
-	var reminderItem = `<div id="reminder-${reminder.id}" class="list-wrapper">
-								<ul class="d-flex flex-column-reverse todo-list">
-									<li>
-										<div class="form-check">
-											<label class="form-check-label"> 
-												<i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons">check_box</i> 
-												<input type="text" class="form-control" id="reminder__content__list-${reminder.priority}" value="${reminder.content}">
-											</label>
-										</div> 
-										<i onclick="reminderUpdate(${reminder.id})" class="material-icons" id="closeList" style="cursor: pointer; font-size: 20px;">create</i> 
-										<i onclick="reminderDelete(${reminder.id})" class="material-icons" id="delList" style="cursor: pointer; font-size: 20px;">delete</i> <!-- 나중에 엡솔루트로 위치지정 -->
-									</li>
-	
-	
-								</ul>
-							</div>`;
+	var reminderItem = `<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
+								<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
+								<div class="form-check" id="reminderList">
+								<label class="form-check-label" id="reminder__content__list-${reminder.priority}" style="text-decoration; text-decoration-color: #8d8d8d;"> ${reminder.content }</label>
+								</div>
+								<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
+								</li>
+								</ul>`;
 	
 		return reminderItem;
 		

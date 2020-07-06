@@ -36,7 +36,7 @@ function reminderCheck(id, priority){
 		alert("우선순위 성공");
 		console.log(result);
 		
-		$("#reminder__list").empty();
+		$("#reminder-${reminder.id}").empty();
 		
 		for (reminder of result) {
 			var  reminderItem =`<div id="reminder__list" class="container">
@@ -53,7 +53,7 @@ function reminderCheck(id, priority){
 
 			// return memoItem;
 			
-			$("#reminder__list").append(reminderItem);
+			$("#reminder-${reminder.id}").append(reminderItem);
 		}
 		
 
@@ -156,7 +156,7 @@ function reminderWrite(personId) {
 				alert("리마인더 작성 실패");
 			} else {
 				alert("리마인더 작성 성공");
-				$("#reminder__list").empty();
+				$("#reminder-${reminder.id}").empty();
 				console.log(result);
 				
 			
@@ -174,7 +174,7 @@ function reminderWrite(personId) {
 
 function renderReminderList(reminders) {
 	for(var reminder of reminders){
-		$("#reminder__list").append(makeReminderItem(reminder));
+		$("#reminder-${reminder.id}").append(makeReminderItem(reminder));
 	}
 }
 

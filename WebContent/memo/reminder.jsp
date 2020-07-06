@@ -120,7 +120,7 @@ div {
 	<div class="form-group">
 
 		<input type="text" class="form-control" id="reminder__content__form" name="content" required="required" placeholder="reminder 작성..." />
-		<button onclick="reminderWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary">확인</button>
+		<button onclick="reminderWrite(${sessionScope.principal.id})" type="button" id="close" class="btn btn-primary">Add</button>
 	</div>
 
 <br>

@@ -569,6 +569,12 @@ ul:hover #delList{
 	display: block;
 }
 
+#reminder__content__list-1{
+	text-decoration: line-through;
+	text-decoration-color: #8d8d8d;
+
+}
+
 
 </style>
 
@@ -587,8 +593,8 @@ ul:hover #delList{
 							
 							<div class="add-items d-flex" >
 								
-								<input type="text" class="form-control todo-list-input" placeholder="Todolist 입력" style="color: black;">
-								<button onclick="reminderWrite(${sessionScope.principal.id})" class="add btn btn-primary font-weight-bold todo-list-add-btn" style="font-family: 'Noto Sans KR', sans-serif;">추가</button>
+								<input type="text" class="form-control todo-list-input" id="reminder__content__form" placeholder="Todolist 입력" style="color: black;">
+								<button onclick="reminderWrite(${sessionScope.principal.id})" class="add btn btn-primary font-weight-bold todo-list-add-btn" style="font-family: 'Noto Sans KR', sans-serif;">Add</button>
 							</div>
 							<br>
 							
@@ -602,7 +608,7 @@ ul:hover #delList{
 												<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
 													<div class="form-check" id="reminderList">
 														
-														<label class="form-check-label" id="reminder__content__list-${reminder.priority}"> ${reminder.content }</label>
+														<label class="form-check-label" id="reminder__content__list-${reminder.priority}" style="text-decoration; text-decoration-color: #8d8d8d;"> ${reminder.content }</label>
 													</div>
 													
 													<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>

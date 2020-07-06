@@ -115,7 +115,7 @@ public class ReminderRepository {
 				
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println(TAG + "update(Memo memo) : " + e.getMessage());
+				System.out.println(TAG + "update() : " + e.getMessage());
 			} finally {
 				DBConn.close(conn, pstmt);
 			}
@@ -178,7 +178,7 @@ public class ReminderRepository {
 		
 		public int save(Reminder reminder) {
 			final String SQL = "INSERT INTO reminder(id, personId, content, priority, createDate) "
-					+ "VALUES(memo_SEQ.NEXTVAL, ?, ?, ?, sysdate)";
+					+ "VALUES(reminder_SEQ.NEXTVAL, ?, ?, ?, sysdate)";
 			
 			try {
 				conn = DBConn.getConnection();
