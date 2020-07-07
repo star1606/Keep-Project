@@ -2,10 +2,7 @@
 
 function memoCheck(id, priority){
 
-// var data = {
-// "id" : id,
-// "priority" : priority
-// };
+
 		console.log(id);
 		console.log(priority);
 	$.ajax({
@@ -48,9 +45,7 @@ function memoCheck(id, priority){
 		}
 		
 		$('#memoCheck-1').css('color', 'red');
-//		$('#closeList').css('color', 'red');
-		// var memos = $("#memo-" + memoId);
-		// $("#memo__list").empty();
+
 		
 	}).fail(function(error) {
 		alert("우선순위 실패");
@@ -61,11 +56,6 @@ function memoCheck(id, priority){
 
 
 
-//
-//$(function(){
-//	$("#memoCheck-1").css("color");
-//	
-//}
 
 
 

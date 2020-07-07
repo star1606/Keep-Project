@@ -77,9 +77,7 @@ textarea {
 	box-shadow: none;
 }
 
-/* .container:hover #delList, #closeList { */
-/*    display: block; */
-/* }  */
+
 .form-group:hover #delList, #closeList {
 	display: block;
 }

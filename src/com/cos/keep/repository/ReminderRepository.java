@@ -212,7 +212,7 @@ public class ReminderRepository {
 			
 			
 			final String SQL = "SELECT id, personId, content, priority, createDate FROM reminder " + 
-					"WHERE personId =? AND (content like ?)";
+					"WHERE personId =? AND content like ?";
 		
 			try {
 				List<Reminder> reminders = new ArrayList<>();
