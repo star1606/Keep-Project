@@ -1,21 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function memoCheck(id, priority){
 
 // var data = {
@@ -33,7 +17,7 @@ function memoCheck(id, priority){
 	}).done(function(result) {
 
 		
-		alert("우선순위 성공");
+		alert("우선순위 check");
 		console.log("result값" + result);
 		
 		$("#memo__list").empty();
@@ -55,8 +39,9 @@ function memoCheck(id, priority){
 							<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
 							<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
 							</div>
-							<br />
-							<br />`;
+							</br>
+							</br>
+							</div>`;
 	
 			
 			$("#memo__list").append(memoItem);
@@ -199,18 +184,19 @@ function renderMemoList(memos) {
 
 
 function makeMemoItem(memo) {
-	var memoItem = `<div id="memo__list" class="container">`;
-		memoItem += `<div id="memo-${memo.id}" class="form-group">`;
-		memoItem += `<input type="text" class="form-control"  id="memo__title__list" value="${memo.title}">`;
-		memoItem += `<textarea class="form-control" rows="5" id="memo__content__list" name="text">${memo.content}</textarea>`;
-		memoItem += `<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck" style="cursor: pointer;">check</i>`;
-		memoItem += `<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>`;
-		memoItem += `<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>`;
-		memoItem += `</div>`;
-		memoItem += `<br/>`;
-		memoItem += `<br/>`;
-		memoItem += `</div>`;
-		return memoItem;
+	var memoItem = `<div id="memo__list" class="container">		
+					<div id="memo-${memo.id}" class="form-group">
+					<input type="text" class="form-control" id="memo__title__list" value="${memo.title}" style="font-family: 'Noto Sans KR', sans-serif;" name="">
+					<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="" style="font-family: 'Noto Sans KR', sans-serif;">${memo.content}</textarea>
+					<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck-${memo.priority }" style="cursor: pointer;">check</i>
+					<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">수정</button>
+					<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
+					</div>
+					</br>
+					</br>
+					</div>`;
+		
+	return memoItem;
 		
 		
 }

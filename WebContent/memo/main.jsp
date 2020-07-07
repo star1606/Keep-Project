@@ -42,7 +42,7 @@ div {
 
 #memoCheck-1 {
 	position: absolute;
-	color: #red;
+	color: red;
 	top: 6px;
 	right: 16px;
 }
@@ -96,6 +96,7 @@ textarea {
 
 
 <!-- 메모하기 -->
+<br>
 <div class="container"  style="padding-left: 0px; width: 613px;">
 
 	<div class="form-group" >
@@ -131,12 +132,10 @@ textarea {
 			</c:choose>
 			<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">수정</button>
 			<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
-
-
+			
 		</div>
-		<br />
-		<br />
-
+		<br>
+		<br>
 	</c:forEach>
 
 </div>

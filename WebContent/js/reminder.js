@@ -33,10 +33,10 @@ function reminderCheck(id, priority){
 	}).done(function(result) {
 
 		
-		alert("우선순위 성공");
+		alert("우선순위 설정");
 		console.log(result);
 		
-		$("#reminder-${reminder.id}").empty();
+		$("#page-content").empty();
 		
 		for (reminder of result) {
 			var  reminderItem =`<div id="reminder__list" class="container">
@@ -53,7 +53,7 @@ function reminderCheck(id, priority){
 
 			// return memoItem;
 			
-			$("#reminder-${reminder.id}").append(reminderItem);
+			$("#page-content").append(reminderItem);
 		}
 		
 
@@ -92,12 +92,12 @@ function reminderUpdate(id) {
 		
 		
 		
-		alert("리마인더 수정 성공");
+		alert("Todolist 추가 성공");
 		console.log(result);
 		renderReminderList(result);
 		
 	}).fail(function() {
-		alert("리마인더 수정 실패(function2)");
+		alert("Todolist 수정 실패(function2)");
 	});
 	
 }
@@ -116,18 +116,18 @@ function reminderDelete(reminderId){
 		
 	}).done(function(result) {
 		if(result == "1"){
-			alert("리마인더 삭제 성공");
+			alert("Todolist 삭제 성공");
 			var reminderItem = $("#reminder-" + reminderId);
 			reminderItem.remove();
 			
 		} else {
 		
-			alert("리마인더 삭제 실패");
+			alert("Todolist 삭제 실패");
 		}
 		
 		
 	}).fail(function(error) {
-		alert("리마인더 삭제 실패");
+		alert("Todolist 삭제 실패");
 	});
 	
 	
@@ -153,10 +153,10 @@ function reminderWrite(personId) {
 			dataType : "json"
 		}).done(function(result) {
 			if(result == -1 || result == 0){
-				alert("리마인더 작성 실패");
+				alert("Todolist 작성 실패");
 			} else {
-				alert("리마인더 작성 성공");
-				$("#reminder-${reminder.id}").empty();
+				alert("Todolist 작성 성공");
+				$("#page-content").empty();
 				console.log(result);
 				
 			
@@ -167,14 +167,14 @@ function reminderWrite(personId) {
 			}
 			
 		}).fail(function(error) {
-			alert("리마인더 작성 실패");
+			alert("Todolist 작성 실패");
 		});
 }
 
 
 function renderReminderList(reminders) {
 	for(var reminder of reminders){
-		$("#reminder-${reminder.id}").append(makeReminderItem(reminder));
+		$("#page-content").append(makeReminderItem(reminder));
 	}
 }
 
@@ -182,6 +182,9 @@ function renderReminderList(reminders) {
 
 
 function makeReminderItem(reminder) {
+
+
+	
 	var reminderItem = `<div id="reminder__list" class="container">
 						<div id="reminder-${reminder.id}" class="form-group">
 						<input type="text" class="form-control" id="reminder__content__list-${reminder.priority}" value="${reminder.content}">

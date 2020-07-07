@@ -598,8 +598,8 @@ ul:hover #delList{
 							</div>
 							<br>
 							
-							<div class="list-wrapper">
-								<hr>
+							<div class="list-wrapper" id="reminder__list">
+							
 								<c:forEach var="reminder" items="${reminders}">
 									
 									<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
