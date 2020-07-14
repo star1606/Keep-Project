@@ -33,7 +33,7 @@ function memoCheck(id, priority){
 							<input type="text" class="form-control" id="memo__title__list" value="${memo.title}">
 							<textarea class="form-control" rows="5" id="memo__content__list" name="text" onclick="">${memo.content}</textarea>
 							<i onclick="memoCheck(${memo.id}, ${memo.priority})" class="material-icons" id="memoCheck-${memo.priority }"" style="cursor: pointer;">check</i>
-							<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">닫기</button>
+							<button type="button" onclick="memoUpdate(${memo.id})" class="btn btn-primary" id="closeList">수정</button>
 							<i onclick="memoDelete(${memo.id})" class="material-icons" id="delList" style="cursor: pointer;">delete</i>
 							</div>
 							</br>

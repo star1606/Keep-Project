@@ -204,7 +204,7 @@ public class PersonRepository {
 		return null;
 	}
 
-	// 매개변수가 뭐 들어가야하는지 이해 부족.
+	
 	public int save(Person person) {
 		final String SQL = "INSERT INTO person(id, email, personName, password, createDate) "
 				+ "VALUES(PERSON_SEQ.NEXTVAL, ?, ?, ?, sysdate)";
