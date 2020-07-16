@@ -48,7 +48,7 @@
 						Account Login
 					</span>
 					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "이메일 양식을 입력 올바르지 않습니다: ex@abc.com">
 						<input class="input100" type="text" value="${cookie.remember.value }" name="email" placeholder="Email">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>

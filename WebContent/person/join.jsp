@@ -54,13 +54,13 @@ input.input100 {
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
 				<form action="/keep/person?cmd=joinProc" class="login100-form validate-form" method="POST"
-					oninput='passConfirm.setCustomValidity(passConfirm.value != password.value ? "Passwords do not match." : "")'>
+					oninput='passConfirm.setCustomValidity(passConfirm.value != password.value ? "Password가 일치하지 않습니다." : "")'>
 					<span class="login100-form-title p-b-33">
 						Account Join
 					</span>
 					
 					Email:
-					<div class="wrap-input100 validate-input " data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input " data-validate = "이메일 양식이 올바르지 않습니다: ex@abc.xyz">
 						<input class="input100" type="text" name="email" placeholder="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
@@ -74,13 +74,13 @@ input.input100 {
 					</div><br/>
 					
 					Password:
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input" data-validate="Password가 필요합니다">
 						<input class="input100" type="password" name="password" placeholder="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
 					</div><br/>
 					Password: 확인
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input" data-validate="Password가 필요합니다">
 						<input class="input100" type="password" name="passConfirm" placeholder="">
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
