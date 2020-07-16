@@ -1,27 +1,8 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function reminderCheck(id, priority){
 
-// var data = {
-// "id" : id,
-// "priority" : priority
-// };
+
 		console.log(id);
 		console.log(priority);
 	$.ajax({
@@ -51,7 +32,7 @@ function reminderCheck(id, priority){
 								<br />
 								</div>`;
 
-			// return memoItem;
+			
 			
 			$("#page-content").append(reminderItem);
 		}

@@ -2,10 +2,7 @@
 
 function reminderCheck(id, priority){
 
-// var data = {
-// "id" : id,
-// "priority" : priority
-// };
+
 		console.log(id);
 		console.log(priority);
 	$.ajax({
@@ -40,31 +37,7 @@ function reminderCheck(id, priority){
 				</li>
 				</ul>`;
 			
-//			if(reminder.priority == 1){
-//				var  reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
-//									<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
-//									<div class="form-check" id="reminderList">
-//									<label class="form-check-label" id="reminder__content__list-${reminder.priority}" style="text-decoration; text-decoration-color: #8d8d8d;"> ${reminder.content }</label>
-//									</div>
-//									<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
-//									</li>
-//									</ul>`;
-//					
-//				
-//			} else{
-//				var  reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
-//					<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box_outline_blank</i>
-//					<div class="form-check" id="reminderList">
-//					<label class="form-check-label" id="reminder__content__list-${reminder.priority}"> ${reminder.content }</label>
-//					</div>
-//					<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
-//					</li>
-//					</ul>`;
-//			}
-			
-			
 
-			// return memoItem;
 			
 			$("#reminder__list").append(reminderItem);
 		}
@@ -76,11 +49,6 @@ function reminderCheck(id, priority){
 
 	
 }
-
-
-
-
-
 
 
 
@@ -208,9 +176,7 @@ function makeReminderItem(reminder) {
 		inner = 'check_box_outline_blank';
 		
 	}
-	
-	
-	
+
 
 		var reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
 					   <li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">${inner}</i>
@@ -220,34 +186,7 @@ function makeReminderItem(reminder) {
 					   <i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
 					   </li>
 					   </ul>`;
-			
-		
 	
-	
-	
-	
-	
-//	if(reminder.priority == 1){
-//		reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
-//							<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box</i>
-//							<div class="form-check" id="reminderList">
-//							<label class="form-check-label" id="reminder__content__list-${reminder.priority}" style="text-decoration; text-decoration-color: #8d8d8d;"> ${reminder.content }</label>
-//							</div>
-//							<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
-//							</li>
-//							</ul>`;
-//			
-//		
-//	} else{
-//		reminderItem =`<ul id="reminder-${reminder.id}" class="d-flex flex-column-reverse todo-list">
-//			<li><i onclick="reminderCheck(${reminder.id}, ${reminder.priority})" class="material-icons" id="reminderCheck-${reminder.priority}" style="cursor: pointer; color:#8d8d8d ">check_box_outline_blank</i>
-//			<div class="form-check" id="reminderList">
-//			<label class="form-check-label" id="reminder__content__list-${reminder.priority}"> ${reminder.content }</label>
-//			</div>
-//			<i onclick="reminderDelete(${reminder.id})" class="material-icons"	id="delList" style="cursor: pointer; font-size: 20px; color: #8d8d8d;">delete</i>
-//			</li>
-//			</ul>`;
-//	}
 	
 	return reminderItem;
 		

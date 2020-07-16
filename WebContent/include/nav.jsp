@@ -53,14 +53,13 @@ html body {
 }
 
 .search::placeholder {
-  
-  
+	
 }
-.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
-    outline:none;
-    background: #ffffff;
-  }
 
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active {
+	outline: none;
+	background: #ffffff;
+}
 
 /* element.style { */
 /* 	width: 615px; */
@@ -127,7 +126,7 @@ searchbar 시작 끝 --%> .container-1 {
 
 .container-1 input#search {
 	width: 728px;
-    height: 46px;
+	height: 46px;
 	background: #525355;
 	border: none;
 	font-size: 10pt;
@@ -140,7 +139,7 @@ searchbar 시작 끝 --%> .container-1 {
 }
 
 .container-1 input#search::-webkit-input-placeholder {
-	color:#eaeaeb;
+	color: #eaeaeb;
 }
 
 .container-1 input#search:-moz-placeholder { /* Firefox 18- */
@@ -159,40 +158,91 @@ searchbar 시작 끝 --%> .container-1 {
 	position: absolute;
 	top: 50%;
 	margin-left: 15px;
-    margin-top: 12px;
+	margin-top: 12px;
 	z-index: 1;
 	color: #eaeaeb;
 }
 
-
-
 body {
-font-size: 17px;
+	font-size: 17px;
 }
 
+#memo__list {
+	padding-left: 0px;
+	width: 613px;
+}
 
+div {
+	display: :inline-block;
+	position: relative;
+}
 
+#close, #closeList {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background-color: #202124;
+	border-color: #202124;
+	color: #E8EAED;
+}
 
-<%--
+#closeList {
+	display: none;
+	color: #202124;
+}
 
+#delList {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	color: #BEBFBF;
+	display: none;
+}
 
-searchbar
+#memoCheck-1 {
+	position: absolute;
+	color: red;
+	top: 6px;
+	right: 16px;
+}
 
+#memoCheck {
+	position: absolute;
+	color: #BEBFBF;
+	top: 6px;
+	right: 16px;
+}
 
+#memoCheck-0 {
+	position: absolute;
+	color: #BEBFBF;
+	top: 6px;
+	right: 16px;
+}
 
- 
+#memo__title__form, #memo__content__form, #memo__title__list, #memo__content__list {
+	color: #E8EAED;
+	background-color: #202124;
+	border-color: #5F6368;
+}
 
+textarea {
+	display: :block;
+	color: #E8EAED;
+}
 
+.form-control:focus {
+	box-shadow: none;
+}
 
-끝
+.form-group:hover #delList, #closeList {
+	display: block;
+}
 
+.form-group:hover #closeList {
+	color: #E8EAED;
+}
 
-
- 
-
-
-
---%>
 </style>
 
 </head>
@@ -221,7 +271,7 @@ searchbar
 				<div id="custom-search-input">
 					<form class="form-inline" action="/keep/memo?cmd=search" method="post">
 						<div class="input-group col-md-12">
-							
+
 							<div class="box">
 								<div class="container-1">
 									<span class="icon"><i class="fa fa-search"></i></span> <input type="search" id="search" name="keyword" placeholder="Search..." style="font-family: 'Noto Sans KR', sans-serif;" />
@@ -232,7 +282,7 @@ searchbar
 				</div>
 			</div>
 
-			
+
 
 
 
@@ -260,12 +310,9 @@ searchbar
 
 				</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="/keep/person?cmd=update" style="font-family: 'Noto Sans KR', sans-serif;">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a class="dropdown-item"
-						href="/keep/person?cmd=logout" style="font-family: 'Noto Sans KR', sans-serif;">로그아웃</a>
+					<a class="dropdown-item" href="/keep/person?cmd=update" style="font-family: 'Noto Sans KR', sans-serif;">회원정보 수정</a> <a class="dropdown-item" href="/keep/person?cmd=profileUpload">사진 수정</a> <a
+						class="dropdown-item" href="/keep/person?cmd=logout" style="font-family: 'Noto Sans KR', sans-serif;">로그아웃</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-
-
-

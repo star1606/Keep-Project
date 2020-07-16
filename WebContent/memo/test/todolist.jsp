@@ -3,7 +3,7 @@
 
 
 
-<%@ include file="../include/navReminder.jsp"%>
+<%-- <%@ include file="../include/navReminder.jsp"%> --%>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">

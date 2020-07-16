@@ -19,19 +19,18 @@ public class MemoUpdateAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		System.out.println("MemoUpdateAction : ~~~~~~~~~~~~~~~~~~~~~~");
+		
 		BufferedReader br = request.getReader();
 
-		System.out.println("MemoUpdateAction : 111111111111111");
+	
 		String input = null;
 
 		StringBuilder sb = new StringBuilder();
-		System.out.println("MemoUpdateAction : 2222222222222222");
+	
 		while ((input = br.readLine()) != null) {
 			sb.append(input);
 		}
-		System.out.println("MemoUpdateAction : 3333333333333");
-		System.out.println(sb.toString());
+	
 
 		Gson gson = new Gson();
 
