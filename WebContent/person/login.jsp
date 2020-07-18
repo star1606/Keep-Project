@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Keep Project</title>
@@ -67,14 +67,16 @@
 							</div>
 
 							<div class="text-center p-t-45 p-b-4">
-								<span class="txt1"> <c:choose>
+								<span class="txt1"> 
+								<c:choose>
 										<c:when test="${empty cookie.remember }">
 											<input type="checkbox" name="remember" id="remember"> 이메일 기억하기
-							</c:when>
+									    </c:when>
+									    
 										<c:otherwise>
 											<input type="checkbox" name="remember" id="remember" checked> 이메일 기억하기
-							</c:otherwise>
-									</c:choose>
+										</c:otherwise>
+								</c:choose>
 								</span>
 
 

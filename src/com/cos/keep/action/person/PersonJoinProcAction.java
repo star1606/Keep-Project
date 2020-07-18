@@ -54,7 +54,7 @@ public class PersonJoinProcAction implements Action{
 		
 		
 		//4. DB연결 -UsersRepository save()호출
-		// 그거를 DB에다가 집어넣는 insert작업을 수행하겠네.
+
 		PersonRepository personRepository = 
 				PersonRepository.getInstance();
 		

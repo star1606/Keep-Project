@@ -11,7 +11,18 @@
 <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
+<style>
+#delList {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	display: none;
+}
+ul:hover #delList {
+	display: block;
+}
 
+</style>
 
 </head>
 

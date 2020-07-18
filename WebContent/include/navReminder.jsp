@@ -61,10 +61,7 @@ html body {
 	background: #ffffff;
 }
 
-/* element.style { */
-/* 	width: 615px; */
-/* 	height: 46px; */
-/* } */
+
 .form-control {
 	height: 34px;
 	padding: 6px 12px;
@@ -117,12 +114,17 @@ html body {
 }
 
 <%--
-searchbar 시작 끝 --%> .container-1 {
+searchbar 시작 끝 --%>
+
+
+ .container-1 {
 	width: 300px;
 	vertical-align: middle;
 	white-space: nowrap;
 	position: relative;
 }
+
+
 
 .container-1 input#search {
 	width: 728px;
@@ -138,9 +140,12 @@ searchbar 시작 끝 --%> .container-1 {
 	border-radius: 5px;
 }
 
+
+
 .container-1 input#search::-webkit-input-placeholder {
 	color: #eaeaeb;
 }
+
 
 .container-1 input#search:-moz-placeholder { /* Firefox 18- */
 	color: #65737e;
@@ -167,9 +172,10 @@ body {
 	font-size: 17px;
 }
 
-<@--
---
-추가 css -->-->ul {
+
+
+
+ul {
 	display: inline-block;
 	position: relative;
 }
