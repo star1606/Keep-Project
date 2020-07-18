@@ -1,3 +1,3 @@
-#### Keep ÇÁ·ÎÁ§Æ®
-> JSP project
+#### Keep í”„ë¡œì íŠ¸
+> JSP memo, todolist project
 </br>
