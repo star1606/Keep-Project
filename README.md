@@ -1,5 +1,6 @@
 ## Keep 프로젝트
 > JSP memo, todolist project
+> 메모와 Todolist 서비스 제공
 </br>
 
 
@@ -67,7 +68,8 @@ CREATE TABLE memo(
 -----------
 ![infoupdate](https://user-images.githubusercontent.com/59248999/87901671-9e69ef00-ca92-11ea-963f-cc3c36cafb9b.png)
 <br>
--Email은 변경하지 못함(read only)
+-Email은 변경하지 못함(read only)<br>
+
 
 메인 화면 -Memo
 -----------
@@ -78,13 +80,6 @@ AJAX 기술 사용 : 1.메모추가, 2.메모삭제, 3.메모 수정, 4.메모 �
 체크 아이콘을 클릭하면 체크 아이콘이 빨간색으로 되면서 우선순위로 상단에 올라간다. <br> 
 
 
-<br>
-
-
-프로필 사진 업로드 화면
-----------
-![profileupload](https://user-images.githubusercontent.com/59248999/87901678-a164df80-ca92-11ea-98c6-19c2f327fed0.png)
--이미지 파일 업로드해서 프로필에 저장(cos 라이브러리 사용)
 
 Todolist 화면
 ------------
@@ -94,19 +89,16 @@ Todolist 화면
 -AJAX 기술 : 1.Todolist 추가, 2.Todolist 삭제, 3.Todolist 완료 <br>
 -체크박스 누르면 줄그인다 <br>
 
-
-로그인화면
-
-
-![Screenshot_54](https://user-images.githubusercontent.com/59248999/88127141-f5480380-cc0d-11ea-9abd-71e21b4531de.png)
+<br>
 
 
+프로필 사진 업로드 화면
+----------
+![profileupload](https://user-images.githubusercontent.com/59248999/87901678-a164df80-ca92-11ea-98c6-19c2f327fed0.png)
+-이미지 파일 업로드해서 프로필에 저장(cos 라이브러리 사용)
+<br>
 
 
-
-
-
-![Screenshot_34](https://user-images.githubusercontent.com/59248999/88127087-dba6bc00-cc0d-11ea-8db9-fbaa5034091d.png)
 
 
 
