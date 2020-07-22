@@ -1,5 +1,5 @@
 ## Keep 프로젝트
-> JSP memo, todolist project
+> JSP memo, todolist project<
 > 메모와 Todolist 서비스 제공
 </br>
 
