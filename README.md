@@ -5,8 +5,8 @@
 
 
 
-###테이블
-----------
+테이블
+
 ```
 CREATE TABLE person(
 	id number primary key,  
