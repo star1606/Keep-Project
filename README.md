@@ -87,7 +87,7 @@ Todolist 화면
 
 -검색 기능 <br>
 -AJAX 기술 : 1.Todolist 추가, 2.Todolist 삭제, 3.Todolist 완료 <br>
--체크박스 누르면 줄그인다 <br>
+-박스를 누르면 체크가 되면서 누르면 줄그인다 <br>
 
 <br>
 
