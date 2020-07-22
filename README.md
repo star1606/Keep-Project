@@ -76,5 +76,13 @@ Todolist 화면
 ![todolist](https://user-images.githubusercontent.com/59248999/87901682-a2960c80-ca92-11ea-959a-3a217cc0452f.png)
 
 
+![Screenshot_20](https://user-images.githubusercontent.com/59248999/88126991-ad28e100-cc0d-11ea-8bb1-58fd4fdcc3ae.png)
+![Screenshot_10](https://user-images.githubusercontent.com/59248999/88127051-caf64600-cc0d-11ea-987a-9a7c371fbedd.png)
+![Screenshot_34](https://user-images.githubusercontent.com/59248999/88127087-dba6bc00-cc0d-11ea-8db9-fbaa5034091d.png)
+
+![Screenshot_54](https://user-images.githubusercontent.com/59248999/88127141-f5480380-cc0d-11ea-9abd-71e21b4531de.png)
+
+
+
 > 시연 동영상 : ➡️ [링크](https://www.youtube.com/watch?v=oulEecwtBwM)
 
