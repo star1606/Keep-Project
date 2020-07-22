@@ -50,6 +50,8 @@ CREATE TABLE memo(
 -자바스크립트 이메일 양식확인<br>
 -쿠키로 이메일 기억하기 기능<br>
 -카카오 로그인 OAuth 2.0 기술<br>
+<br>
+<br>
 
 
 회원가입 화면
@@ -60,7 +62,7 @@ CREATE TABLE memo(
 -이메일 중복확인 <br>
 -회원가입시 password는 해쉬화(SHA-256)되서 데이터에 저장 <br>
 <br>
-
+<br>
 
 
 
@@ -69,7 +71,8 @@ CREATE TABLE memo(
 ![infoupdate](https://user-images.githubusercontent.com/59248999/87901671-9e69ef00-ca92-11ea-963f-cc3c36cafb9b.png)
 <br>
 -Email은 변경하지 못함(read only)<br>
-
+<br>
+<br>
 
 메인 화면 -Memo
 -----------
@@ -78,7 +81,8 @@ CREATE TABLE memo(
 -hover 사용: 마우스 올리면 삭제아이콘, 수정버튼뜸 <br>
 AJAX 기술 사용 : 1.메모추가, 2.메모삭제, 3.메모 수정, 4.메모 우선순위 <br>
 체크 아이콘을 클릭하면 체크 아이콘이 빨간색으로 되면서 우선순위로 상단에 올라간다. <br> 
-
+<br>
+<br>
 
 
 Todolist 화면
@@ -88,7 +92,7 @@ Todolist 화면
 -검색 기능 <br>
 -AJAX 기술 : 1.Todolist 추가, 2.Todolist 삭제, 3.Todolist 완료 <br>
 -박스를 누르면 체크가 되면서 누르면 줄그인다 <br>
-
+<br>
 <br>
 
 
@@ -97,8 +101,8 @@ Todolist 화면
 ![profileupload](https://user-images.githubusercontent.com/59248999/87901678-a164df80-ca92-11ea-98c6-19c2f327fed0.png)
 -이미지 파일 업로드해서 프로필에 저장(cos 라이브러리 사용)
 <br>
-
-
+<br>
+<br>
 
 
 
