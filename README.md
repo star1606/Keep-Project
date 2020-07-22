@@ -44,8 +44,11 @@ CREATE TABLE memo(
 
 로그인 화면
 ---------
-![login](https://user-images.githubusercontent.com/59248999/87846004-9a5d9600-c907-11ea-8027-edde6d5014e3.png)
-<br>
+![Screenshot_20](https://user-images.githubusercontent.com/59248999/88126991-ad28e100-cc0d-11ea-8bb1-58fd4fdcc3ae.png)
+
+-자바스크립트 이메일 양식확인
+-쿠키로 이메일 기억하기 기능
+-카카오 로그인 OAuth 2.0 기술
 
 
 회원가입 화면
@@ -76,9 +79,18 @@ Todolist 화면
 ![todolist](https://user-images.githubusercontent.com/59248999/87901682-a2960c80-ca92-11ea-959a-3a217cc0452f.png)
 
 
-![Screenshot_20](https://user-images.githubusercontent.com/59248999/88126991-ad28e100-cc0d-11ea-8bb1-58fd4fdcc3ae.png)
+로그인화면
+
+
+
 ![Screenshot_10](https://user-images.githubusercontent.com/59248999/88127051-caf64600-cc0d-11ea-987a-9a7c371fbedd.png)
+
+
+
+
 ![Screenshot_34](https://user-images.githubusercontent.com/59248999/88127087-dba6bc00-cc0d-11ea-8db9-fbaa5034091d.png)
+
+
 
 ![Screenshot_54](https://user-images.githubusercontent.com/59248999/88127141-f5480380-cc0d-11ea-9abd-71e21b4531de.png)
 
