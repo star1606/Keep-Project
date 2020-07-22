@@ -6,7 +6,7 @@
 
 
 테이블
-
+-------
 ```
 CREATE TABLE person(
 	id number primary key,  
@@ -76,6 +76,5 @@ Todolist 화면
 ![todolist](https://user-images.githubusercontent.com/59248999/87901682-a2960c80-ca92-11ea-959a-3a217cc0452f.png)
 
 
-
-
+> 시연 동영상 : ➡️ [링크](https://www.youtube.com/watch?v=oulEecwtBwM)
 
