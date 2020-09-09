@@ -1,6 +1,32 @@
+
+# Keep JSP Project
+
+## 1. 프로젝트 개요
+
+>-JSP memo, todolist project<br>
+>-Google Keep 메모 서비스를 본따 만들었으며<br>
+>-추가적으로 Todo list 서비스를 제공합니다<br><br>
+
+
+## 2. 개발환경
+
+- Springs Tools 4 for Eclipse
+- Oracle 18c
+- Tomcat 8.5<br><br>
+
+
+
+## 3. 사용기술
+  - OAuth2.0(카카오 로그인)
+  - Password 해쉬화(SHA-256)
+  - AJAX
+  - Bootstrap<br><br>
+  
+
+
+
 ## Keep 프로젝트
-> JSP memo, todolist project<br>
-> 메모와 Todolist 서비스 제공
+
 </br>
 <br>
 <br>
@@ -53,8 +79,8 @@ CREATE TABLE memo(
 -자바스크립트 이메일 양식확인<br>
 -쿠키로 이메일 기억하기 기능<br>
 -카카오 로그인 OAuth 2.0 기술<br>
-<br>
-<br>
+<br><br>
+
 
 
 회원가입 화면
