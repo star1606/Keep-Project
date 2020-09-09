@@ -27,7 +27,7 @@
 
 테이블
 -------
-```
+```sql
 CREATE TABLE person(
 	id number primary key,  
     email varchar2(100) not null,
